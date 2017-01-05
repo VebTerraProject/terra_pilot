@@ -1,0 +1,17 @@
+﻿CREATE OR REPLACE MAP i18n be_gmt (
+    'country' = 'BE'
+    'currency' = 'EURO'
+    'currencydecimalposition' = '2'
+    'currencydecimalseparator' = ''
+    'currencygroupseparator' = ''
+    'currencysymbol' = '€'
+    'datepattern' = 'dd-MM-yyyy HH:mm:ss'
+    'doubledecimalposition' = '2'
+    'doubledecimalseparator' = ''
+    'doublegroupseparator' = ''
+    'language' = 'en'
+    'moneypattern' = '###.###.###,##'
+    'timepattern' = 'DAY'
+    'timezone' = 'GMT+01:00'
+);
+

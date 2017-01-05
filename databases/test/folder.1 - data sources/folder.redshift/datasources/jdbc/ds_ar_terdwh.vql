@@ -1,0 +1,28 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE DATASOURCE JDBC ds_ar_terdwh
+    FOLDER = '/1 - data sources/redshift'
+    DRIVERCLASSNAME = 'com.amazon.redshift.jdbc41.Driver'
+    DATABASEURI = '${databases.test.folder.1 - data sources.folder.redshift.datasources.jdbc.ds_ar_terdwh.DATABASEURI}'
+    USERNAME = '${databases.test.folder.1 - data sources.folder.redshift.datasources.jdbc.ds_ar_terdwh.USERNAME}'
+    USERPASSWORD = '${databases.test.folder.1 - data sources.folder.redshift.datasources.jdbc.ds_ar_terdwh.USERPASSWORD}' ${databases.test.folder.1 - data sources.folder.redshift.datasources.jdbc.ds_ar_terdwh.USERPASSWORD.ENCRYPTED}
+    CLASSPATH = ''
+    DATABASENAME = 'redshift'
+    DATABASEVERSION = '2015'
+    FETCHSIZE = 1000
+    BATCHINSERTSIZE = 200
+    VALIDATIONQUERY = 'Select 1'
+    INITIALSIZE = 4
+    MAXIDLE = -1
+    MINIDLE = 0
+    MAXACTIVE = 20
+    EXHAUSTEDACTION = 1
+    TESTONBORROW = true
+    TESTONRETURN = false
+    TESTWHILEIDLE = false
+    TIMEBETWEENEVICTION = -1
+    NUMTESTPEREVICTION = 3
+    MINEVICTABLETIME = 1800000
+    POOLPREPAREDSTATEMENTS = false
+    MAXSLEEPINGPS = 4
+    INITIALCAPACITYPS = 8;
+

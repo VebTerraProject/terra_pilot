@@ -1,0 +1,48 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_consumption_qualities
+    FOLDER = '/2 - base views'
+    DATASOURCENAME=ds_ar_terdwh
+    CATALOGNAME = '${databases.test.folder.2 - base views.views.jdbc.bv_consumption_qualities.CATALOGNAME}'
+    SCHEMANAME = '${databases.test.folder.2 - base views.views.jdbc.bv_consumption_qualities.SCHEMANAME}'
+    RELATIONNAME='consumption_qualities' 
+    OUTPUTSCHEMA (
+        id = 'id' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='int4', sourcetypeid='4', sourcetypedecimals='0', sourcetypesize='10')  NOT NULL SORTABLE,
+        code = 'code' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        test = 'description' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        created_by = 'created_by' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        last_updated_by = 'last_updated_by' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        created = 'created' :'java.sql.Timestamp' (OPT) (sourcetyperadix='10', sourcetypename='timestamp', sourcetypeid='93', sourcetypedecimals='6', sourcetypesize='29')  SORTABLE,
+        last_updated = 'last_updated' :'java.sql.Timestamp' (OPT) (sourcetyperadix='10', sourcetypename='timestamp', sourcetypeid='93', sourcetypedecimals='6', sourcetypesize='29')  SORTABLE
+    )
+    CONSTRAINT 'pk_consumption_qualities' PRIMARY KEY ( 'id' );
+
+CREATE OR REPLACE TABLE bv_consumption_qualities I18N be_gmt (
+        id:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '4'), 
+        code:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        test:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        created_by:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        last_updated_by:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        created:date (sourcetyperadix = '10', sourcetypedecimals = '6', sourcetypesize = '29', sourcetypeid = '93'), 
+        last_updated:date (sourcetyperadix = '10', sourcetypedecimals = '6', sourcetypesize = '29', sourcetypeid = '93')
+    )
+    FOLDER = '/2 - base views'
+    DESCRIPTION = 'test&é'
+    PRIMARY KEY ( 'id' )
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_consumption_qualities(
+        I18N be_gmt
+        CONSTRAINTS (
+             ADD id (any) OPT ANY
+             ADD code (any) OPT ANY
+             ADD test (any) OPT ANY
+             ADD created_by (any) OPT ANY
+             ADD last_updated_by (any) OPT ANY
+             ADD created (any) OPT ANY
+             ADD last_updated (any) OPT ANY
+        )
+        OUTPUTLIST (code, created, created_by, id, last_updated, last_updated_by, test
+        )
+        WRAPPER (jdbc bv_consumption_qualities)
+    );
+
