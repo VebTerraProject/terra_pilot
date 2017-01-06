@@ -3,3 +3,7 @@
 ALTER VIEW dv_01_consumption_qualities_cur
  LAYOUT (bv_consumption_qualities = [20, 20, 207, 105]);
 
+ALTER VIEW dv_01_consumption_qualities_cur
+ CACHE FULL
+     BATCHSIZEINCACHE DEFAULT TIMETOLIVEINCACHE DEFAULT;
+
