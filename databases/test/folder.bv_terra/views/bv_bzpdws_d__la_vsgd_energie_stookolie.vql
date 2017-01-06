@@ -1,0 +1,77 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdws_d__la_vsgd_energie_stookolie
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdws_d__la_vsgd_energie_stookolie.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdws_d__la_vsgd_energie_stookolie' 
+    OUTPUTSCHEMA (
+        stok_id = 'stok_id' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  NOT NULL SORTABLE,
+        stok_geb_id = 'stok_geb_id' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        stok_jaar = 'stok_jaar' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        stok_metr = 'stok_metr' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        stok_lev_id = 'stok_lev_id' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        stok_rmct = 'stok_rmct' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        stok_vrbr = 'stok_vrbr' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        stok_ins_date = 'stok_ins_date' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        stok_ins_user = 'stok_ins_user' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        stok_upd_date = 'stok_upd_date' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        stok_upd_user = 'stok_upd_user' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdws_d__la_vsgd_energie_stookolie I18N us_pst (
+        stok_id:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        stok_geb_id:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        stok_jaar:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        stok_metr:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        stok_lev_id:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        stok_rmct:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        stok_vrbr:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        stok_ins_date:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        stok_ins_user:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        stok_upd_date:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        stok_upd_user:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdws_d__la_vsgd_energie_stookolie(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD stok_id (any) OPT ANY
+             ADD stok_geb_id (any) OPT ANY
+             ADD stok_jaar (any) OPT ANY
+             ADD stok_metr (any) OPT ANY
+             ADD stok_lev_id (any) OPT ANY
+             ADD stok_rmct (any) OPT ANY
+             ADD stok_vrbr (any) OPT ANY
+             ADD stok_ins_date (any) OPT ANY
+             ADD stok_ins_user (any) OPT ANY
+             ADD stok_upd_date (any) OPT ANY
+             ADD stok_upd_user (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d, stok_geb_id, stok_id, stok_ins_date, stok_ins_user, stok_jaar, stok_lev_id, stok_metr, stok_rmct, stok_upd_date, stok_upd_user, stok_vrbr
+        )
+        WRAPPER (jdbc bv_bzpdws_d__la_vsgd_energie_stookolie)
+    );
+

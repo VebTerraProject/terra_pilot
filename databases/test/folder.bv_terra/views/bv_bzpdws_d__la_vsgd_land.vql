@@ -1,0 +1,68 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdws_d__la_vsgd_land
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdws_d__la_vsgd_land.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdws_d__la_vsgd_land' 
+    OUTPUTSCHEMA (
+        n_land_tk = 'n_land_tk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        c_land_nk = 'c_land_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2')  SORTABLE,
+        c_naam_land_l = 'c_naam_land_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='64')  SORTABLE,
+        n_eu15_b = 'n_eu15_b' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='INTEGER', sourcetypeid='4', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        n_eu27_b = 'n_eu27_b' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='INTEGER', sourcetypeid='4', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        c_iso3_l = 'c_iso3_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='3')  SORTABLE,
+        n_rsz_l = 'n_rsz_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        n_un_l = 'n_un_l' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='INTEGER', sourcetypeid='4', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdws_d__la_vsgd_land I18N us_pst (
+        n_land_tk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        c_land_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2', sourcetypeid = '12'), 
+        c_naam_land_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '64', sourcetypeid = '12'), 
+        n_eu15_b:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '4'), 
+        n_eu27_b:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '4'), 
+        c_iso3_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '3', sourcetypeid = '12'), 
+        n_rsz_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        n_un_l:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '4'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdws_d__la_vsgd_land(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD n_land_tk (any) OPT ANY
+             ADD c_land_nk (any) OPT ANY
+             ADD c_naam_land_l (any) OPT ANY
+             ADD n_eu15_b (any) OPT ANY
+             ADD n_eu27_b (any) OPT ANY
+             ADD c_iso3_l (any) OPT ANY
+             ADD n_rsz_l (any) OPT ANY
+             ADD n_un_l (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, c_iso3_l, c_land_nk, c_naam_land_l, n_eu15_b, n_eu27_b, n_land_tk, n_rsz_l, n_un_l, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d
+        )
+        WRAPPER (jdbc bv_bzpdws_d__la_vsgd_land)
+    );
+

@@ -1,0 +1,38 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdwr_d__dw_d_vsgd_gwp_bestemmingstype
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdwr_d__dw_d_vsgd_gwp_bestemmingstype.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdwr_d__dw_d_vsgd_gwp_bestemmingstype' 
+    OUTPUTSCHEMA (
+        n_gwp_code_pk = 'n_gwp_code_pk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='4')  NOT NULL SORTABLE,
+        c_gwp_groep_l = 'c_gwp_groep_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  NOT NULL SORTABLE,
+        c_gwp_subgroep_l = 'c_gwp_subgroep_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  NOT NULL SORTABLE,
+        c_gwp_titel_l = 'c_gwp_titel_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  NOT NULL SORTABLE,
+        c_gwp_rbh_code_l = 'c_gwp_rbh_code_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdwr_d__dw_d_vsgd_gwp_bestemmingstype I18N us_pst (
+        n_gwp_code_pk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '4', sourcetypeid = '12'), 
+        c_gwp_groep_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_gwp_subgroep_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        c_gwp_titel_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_gwp_rbh_code_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdwr_d__dw_d_vsgd_gwp_bestemmingstype(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD n_gwp_code_pk (any) OPT ANY
+             ADD c_gwp_groep_l (any) OPT ANY
+             ADD c_gwp_subgroep_l (any) OPT ANY
+             ADD c_gwp_titel_l (any) OPT ANY
+             ADD c_gwp_rbh_code_l (any) OPT ANY
+        )
+        OUTPUTLIST (c_gwp_groep_l, c_gwp_rbh_code_l, c_gwp_subgroep_l, c_gwp_titel_l, n_gwp_code_pk
+        )
+        WRAPPER (jdbc bv_bzpdwr_d__dw_d_vsgd_gwp_bestemmingstype)
+    );
+

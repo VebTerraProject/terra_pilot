@@ -1,0 +1,86 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdws_d__la_vsgd_gln
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdws_d__la_vsgd_gln.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdws_d__la_vsgd_gln' 
+    OUTPUTSCHEMA (
+        gln_nummer = 'gln_nummer' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        gln_naam = 'gln_naam' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        gln_energietype = 'gln_energietype' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        gln_cluster = 'gln_cluster' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        gln_type = 'gln_type' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='3')  SORTABLE,
+        gln_actief = 'gln_actief' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        gln_laatstgebruikt = 'gln_laatstgebruikt' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        gln_gs1 = 'gln_gs1' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        gln_van = 'gln_van' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        gln_laatstbijgewerkt = 'gln_laatstbijgewerkt' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        gln_opmerking = 'gln_opmerking' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        gln_provider = 'gln_provider' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        gln_nud_active = 'gln_nud_active' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        gln_nud_cluster = 'gln_nud_cluster' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='INTEGER', sourcetypeid='4', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdws_d__la_vsgd_gln I18N us_pst (
+        gln_nummer:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        gln_naam:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        gln_energietype:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        gln_cluster:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        gln_type:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '3', sourcetypeid = '12'), 
+        gln_actief:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        gln_laatstgebruikt:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        gln_gs1:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        gln_van:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        gln_laatstbijgewerkt:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        gln_opmerking:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        gln_provider:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        gln_nud_active:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        gln_nud_cluster:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '4')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdws_d__la_vsgd_gln(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD gln_nummer (any) OPT ANY
+             ADD gln_naam (any) OPT ANY
+             ADD gln_energietype (any) OPT ANY
+             ADD gln_cluster (any) OPT ANY
+             ADD gln_type (any) OPT ANY
+             ADD gln_actief (any) OPT ANY
+             ADD gln_laatstgebruikt (any) OPT ANY
+             ADD gln_gs1 (any) OPT ANY
+             ADD gln_van (any) OPT ANY
+             ADD gln_laatstbijgewerkt (any) OPT ANY
+             ADD gln_opmerking (any) OPT ANY
+             ADD gln_provider (any) OPT ANY
+             ADD gln_nud_active (any) OPT ANY
+             ADD gln_nud_cluster (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, gln_actief, gln_cluster, gln_energietype, gln_gs1, gln_laatstbijgewerkt, gln_laatstgebruikt, gln_naam, gln_nud_active, gln_nud_cluster, gln_nummer, gln_opmerking, gln_provider, gln_type, gln_van, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d
+        )
+        WRAPPER (jdbc bv_bzpdws_d__la_vsgd_gln)
+    );
+

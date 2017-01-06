@@ -1,0 +1,68 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdws_d__sa_vsgd_verbruik_energie
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdws_d__sa_vsgd_verbruik_energie.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdws_d__sa_vsgd_verbruik_energie' 
+    OUTPUTSCHEMA (
+        n_enrg_ean_fk = 'n_enrg_ean_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        n_jaar_l = 'n_jaar_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        n_leverancier_fk = 'n_leverancier_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        n_enrg_type_fk = 'n_enrg_type_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        b_enrg_fact_l = 'b_enrg_fact_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_enrg_rmct_l = 'b_enrg_rmct_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        n_enrg_verb_l = 'n_enrg_verb_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        b_enrg_richting_l = 'b_enrg_richting_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdws_d__sa_vsgd_verbruik_energie I18N us_pst (
+        n_enrg_ean_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_jaar_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_leverancier_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_enrg_type_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        b_enrg_fact_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_enrg_rmct_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        n_enrg_verb_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        b_enrg_richting_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdws_d__sa_vsgd_verbruik_energie(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD n_enrg_ean_fk (any) OPT ANY
+             ADD n_jaar_l (any) OPT ANY
+             ADD n_leverancier_fk (any) OPT ANY
+             ADD n_enrg_type_fk (any) OPT ANY
+             ADD b_enrg_fact_l (any) OPT ANY
+             ADD b_enrg_rmct_l (any) OPT ANY
+             ADD n_enrg_verb_l (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+             ADD b_enrg_richting_l (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, b_enrg_fact_l, b_enrg_richting_l, b_enrg_rmct_l, n_enrg_ean_fk, n_enrg_type_fk, n_enrg_verb_l, n_jaar_l, n_leverancier_fk, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d
+        )
+        WRAPPER (jdbc bv_bzpdws_d__sa_vsgd_verbruik_energie)
+    );
+

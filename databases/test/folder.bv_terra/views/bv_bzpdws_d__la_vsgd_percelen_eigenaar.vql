@@ -1,0 +1,53 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdws_d__la_vsgd_percelen_eigenaar
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdws_d__la_vsgd_percelen_eigenaar.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdws_d__la_vsgd_percelen_eigenaar' 
+    OUTPUTSCHEMA (
+        c_perceigenaar_l = 'c_perceigenaar_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  NOT NULL SORTABLE,
+        c_organisatie_wivo_nk = 'c_organisatie_wivo_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  NOT NULL SORTABLE,
+        c_organisatie_vlmp_nk = 'c_organisatie_vlmp_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  NOT NULL SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='INTEGER', sourcetypeid='4', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdws_d__la_vsgd_percelen_eigenaar I18N us_pst (
+        c_perceigenaar_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_organisatie_wivo_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_organisatie_vlmp_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '4')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdws_d__la_vsgd_percelen_eigenaar(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD c_perceigenaar_l (any) OPT ANY
+             ADD c_organisatie_wivo_nk (any) OPT ANY
+             ADD c_organisatie_vlmp_nk (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, c_organisatie_vlmp_nk, c_organisatie_wivo_nk, c_perceigenaar_l, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d
+        )
+        WRAPPER (jdbc bv_bzpdws_d__la_vsgd_percelen_eigenaar)
+    );
+

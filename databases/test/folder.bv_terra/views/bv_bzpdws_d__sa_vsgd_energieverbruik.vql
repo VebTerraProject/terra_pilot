@@ -1,0 +1,155 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdws_d__sa_vsgd_energieverbruik
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdws_d__sa_vsgd_energieverbruik.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdws_d__sa_vsgd_energieverbruik' 
+    OUTPUTSCHEMA (
+        d_waarneming_dt = 'd_waarneming_dt' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  NOT NULL SORTABLE,
+        n_gebouw_fk = 'n_gebouw_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  SORTABLE,
+        n_enrg_ean_fk = 'n_enrg_ean_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  SORTABLE,
+        n_enrg_type_fk = 'n_enrg_type_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        nk_nis_gemeente_code_l = 'nk_nis_gemeente_code_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        nk_crab_gemeente_id = 'nk_crab_gemeente_id' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        c_gemeente_l = 'c_gemeente_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        c_postcode_l = 'c_postcode_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='4')  SORTABLE,
+        c_straatcode_l = 'c_straatcode_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='4')  SORTABLE,
+        c_crab_straat_id_l = 'c_crab_straat_id_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        c_geb_straat_l = 'c_geb_straat_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        c_geb_huisnummer_l = 'c_geb_huisnummer_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        c_geb_busnummer_l = 'c_geb_busnummer_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        n_ean_jaar_verbruik_l = 'n_ean_jaar_verbruik_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        c_ean_richting_l = 'c_ean_richting_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='12')  SORTABLE,
+        c_ean_leverancier_kbo_l = 'c_ean_leverancier_kbo_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='12')  SORTABLE,
+        c_ean_meetmethode_l = 'c_ean_meetmethode_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='3')  SORTABLE,
+        n_ean_gis_latitude_l = 'n_ean_gis_latitude_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='24')  SORTABLE,
+        n_ean_gis_longitude_l = 'n_ean_gis_longitude_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='24')  SORTABLE,
+        c_ean_afschakelpunt_l = 'c_ean_afschakelpunt_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        c_ean_b98_l = 'c_ean_b98_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='3')  SORTABLE,
+        c_ean_gos_l = 'c_ean_gos_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='18')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        c_locatiedetails_l = 'c_locatiedetails_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_enrg_lev_l = 'c_enrg_lev_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_nu_naam_l = 'c_nu_naam_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_ean_status_l = 'c_ean_status_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_jaar_l = 'c_jaar_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        c_gebean_nk = 'c_gebean_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='18')  SORTABLE,
+        n_energieleverancier_fk = 'n_energieleverancier_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  SORTABLE,
+        d_periode_van_fk = 'd_periode_van_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        d_periode_tot_fk = 'd_periode_tot_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        c_tijdstip_van_fk = 'c_tijdstip_van_fk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        c_tijdstip_tot_fk = 'c_tijdstip_tot_fk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        n_enrg_prim_verb_m = 'n_enrg_prim_verb_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_epc_vea_m = 'n_epc_vea_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_verdeling_identiek_adres_l = 'n_verdeling_identiek_adres_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        geb_id = 'geb_id' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdws_d__sa_vsgd_energieverbruik I18N us_pst (
+        d_waarneming_dt:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        n_gebouw_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_enrg_ean_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_enrg_type_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_load_id_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        nk_nis_gemeente_code_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        nk_crab_gemeente_id:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        c_gemeente_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        c_postcode_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '4', sourcetypeid = '12'), 
+        c_straatcode_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '4', sourcetypeid = '12'), 
+        c_crab_straat_id_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        c_geb_straat_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        c_geb_huisnummer_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        c_geb_busnummer_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        n_ean_jaar_verbruik_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        c_ean_richting_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '12', sourcetypeid = '12'), 
+        c_ean_leverancier_kbo_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '12', sourcetypeid = '12'), 
+        c_ean_meetmethode_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '3', sourcetypeid = '12'), 
+        n_ean_gis_latitude_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '24', sourcetypeid = '2'), 
+        n_ean_gis_longitude_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '24', sourcetypeid = '2'), 
+        c_ean_afschakelpunt_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        c_ean_b98_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '3', sourcetypeid = '12'), 
+        c_ean_gos_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '18', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        c_locatiedetails_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_enrg_lev_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_nu_naam_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_ean_status_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_jaar_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        c_gebean_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '18', sourcetypeid = '12'), 
+        n_energieleverancier_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        d_periode_van_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        d_periode_tot_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        c_tijdstip_van_fk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        c_tijdstip_tot_fk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        n_enrg_prim_verb_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_epc_vea_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_verdeling_identiek_adres_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        geb_id:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdws_d__sa_vsgd_energieverbruik(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD d_waarneming_dt (any) OPT ANY
+             ADD n_gebouw_fk (any) OPT ANY
+             ADD n_enrg_ean_fk (any) OPT ANY
+             ADD n_enrg_type_fk (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+             ADD nk_nis_gemeente_code_l (any) OPT ANY
+             ADD nk_crab_gemeente_id (any) OPT ANY
+             ADD c_gemeente_l (any) OPT ANY
+             ADD c_postcode_l (any) OPT ANY
+             ADD c_straatcode_l (any) OPT ANY
+             ADD c_crab_straat_id_l (any) OPT ANY
+             ADD c_geb_straat_l (any) OPT ANY
+             ADD c_geb_huisnummer_l (any) OPT ANY
+             ADD c_geb_busnummer_l (any) OPT ANY
+             ADD n_ean_jaar_verbruik_l (any) OPT ANY
+             ADD c_ean_richting_l (any) OPT ANY
+             ADD c_ean_leverancier_kbo_l (any) OPT ANY
+             ADD c_ean_meetmethode_l (any) OPT ANY
+             ADD n_ean_gis_latitude_l (any) OPT ANY
+             ADD n_ean_gis_longitude_l (any) OPT ANY
+             ADD c_ean_afschakelpunt_l (any) OPT ANY
+             ADD c_ean_b98_l (any) OPT ANY
+             ADD c_ean_gos_l (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD c_locatiedetails_l (any) OPT ANY
+             ADD c_enrg_lev_l (any) OPT ANY
+             ADD c_nu_naam_l (any) OPT ANY
+             ADD c_ean_status_l (any) OPT ANY
+             ADD c_jaar_l (any) OPT ANY
+             ADD c_gebean_nk (any) OPT ANY
+             ADD n_energieleverancier_fk (any) OPT ANY
+             ADD d_periode_van_fk (any) OPT ANY
+             ADD d_periode_tot_fk (any) OPT ANY
+             ADD c_tijdstip_van_fk (any) OPT ANY
+             ADD c_tijdstip_tot_fk (any) OPT ANY
+             ADD n_enrg_prim_verb_m (any) OPT ANY
+             ADD n_epc_vea_m (any) OPT ANY
+             ADD n_verdeling_identiek_adres_l (any) OPT ANY
+             ADD geb_id (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, c_crab_straat_id_l, c_ean_afschakelpunt_l, c_ean_b98_l, c_ean_gos_l, c_ean_leverancier_kbo_l, c_ean_meetmethode_l, c_ean_richting_l, c_ean_status_l, c_enrg_lev_l, c_geb_busnummer_l, c_geb_huisnummer_l, c_geb_straat_l, c_gebean_nk, c_gemeente_l, c_jaar_l, c_locatiedetails_l, c_nu_naam_l, c_postcode_l, c_straatcode_l, c_tijdstip_tot_fk, c_tijdstip_van_fk, d_periode_tot_fk, d_periode_van_fk, d_waarneming_dt, geb_id, n_ean_gis_latitude_l, n_ean_gis_longitude_l, n_ean_jaar_verbruik_l, n_energieleverancier_fk, n_enrg_ean_fk, n_enrg_prim_verb_m, n_enrg_type_fk, n_epc_vea_m, n_gebouw_fk, n_verdeling_identiek_adres_l, nk_crab_gemeente_id, nk_nis_gemeente_code_l, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d
+        )
+        WRAPPER (jdbc bv_bzpdws_d__sa_vsgd_energieverbruik)
+    );
+

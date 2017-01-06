@@ -1,0 +1,85 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC toegangsregister
+    FOLDER = '/1 - data sources'
+    DATASOURCENAME=janus
+    CATALOGNAME = '${databases.test.folder.1 - data sources.views.jdbc.toegangsregister.CATALOGNAME}'
+    SCHEMANAME = '${databases.test.folder.1 - data sources.views.jdbc.toegangsregister.SCHEMANAME}'
+    RELATIONNAME='ToegangsRegister' 
+    OUTPUTSCHEMA (
+        dgo = 'DGO' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        ean = 'EAN' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        straat = 'straat' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        huisnummer = 'huisnummer' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        bus = 'bus' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        postcode = 'Postcode' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        gemeente = 'gemeente' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        energietype = 'energietype' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        gos = 'GOS' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        meternummers = 'meternummers' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        appartementnummer = 'appartementnummer' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        level = 'level' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  ESCAPE SORTABLE,
+        dnbnaam_0 = 'dnb naam' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  ESCAPE SORTABLE,
+        dnbgln_0 = 'dnb gln' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  ESCAPE SORTABLE,
+        richting = 'Richting' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        room = 'Room' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        dgolabel_0 = 'DGO-label' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  ESCAPE SORTABLE,
+        capaciteit = 'Capaciteit' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        kaliber_gasmeter = 'kaliber_gasmeter' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE toegangsregister I18N be_euro (
+        dgo:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        ean:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        straat:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        huisnummer:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        bus:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        postcode:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        gemeente:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        energietype:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        gos:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        meternummers:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        appartementnummer:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        level:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        dnbnaam_0:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        dnbgln_0:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        richting:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '-9'), 
+        room:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '-9'), 
+        dgolabel_0:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '-9'), 
+        capaciteit:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '-9'), 
+        kaliber_gasmeter:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '-9')
+    )
+    FOLDER = '/1 - data sources'
+    DESCRIPTION = 'fgdfggrgd'
+    CACHE PARTIAL
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD toegangsregister(
+        I18N be_euro
+        CONSTRAINTS (
+             ADD dgo (any) OPT ANY
+             ADD ean (any) OPT ANY
+             ADD straat (any) OPT ANY
+             ADD huisnummer (any) OPT ANY
+             ADD bus (any) OPT ANY
+             ADD postcode (any) OPT ANY
+             ADD gemeente (any) OPT ANY
+             ADD energietype (any) OPT ANY
+             ADD gos (any) OPT ANY
+             ADD meternummers (any) OPT ANY
+             ADD appartementnummer (any) OPT ANY
+             ADD level (any) OPT ANY
+             ADD dnbnaam_0 (any) OPT ANY
+             ADD dnbgln_0 (any) OPT ANY
+             ADD richting (any) OPT ANY
+             ADD room (any) OPT ANY
+             ADD dgolabel_0 (any) OPT ANY
+             ADD capaciteit (any) OPT ANY
+             ADD kaliber_gasmeter (any) OPT ANY
+        )
+        OUTPUTLIST (appartementnummer, bus, capaciteit, dgo, dgolabel_0, dnbgln_0, dnbnaam_0, ean, energietype, gemeente, gos, huisnummer, kaliber_gasmeter, level, meternummers, postcode, richting, room, straat
+        )
+        WRAPPER (jdbc toegangsregister)
+    )
+     DECLARE VIEW CLUSTER INDEX idx_straat_postcode ON (straat ASC, postcode ASC)
+    DECLARE CACHE INDEX idx_toegangsregister_straat ON (straat)
+    SMART_THEN_ATSOURCE_THROUGH_VDP;
+

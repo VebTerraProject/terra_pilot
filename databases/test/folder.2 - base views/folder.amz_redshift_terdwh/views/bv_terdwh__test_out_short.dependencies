@@ -1,0 +1,5 @@
+﻿/databases/test/folder.2 - base views/2 - base views.vql
+/databases/test/folder.2 - base views/folder.amz_redshift_terdwh/amz_redshift_terdwh.vql
+/databases/test/folder.1 - data sources/1 - data sources.vql
+/databases/test/folder.1 - data sources/folder.redshift/redshift.vql
+/databases/test/folder.1 - data sources/folder.redshift/datasources/jdbc/ds_ar_terdwh.vql

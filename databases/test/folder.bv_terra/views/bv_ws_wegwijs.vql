@@ -1,0 +1,26 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_ws_wegwijs
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_ws_wegwijs.CATALOGNAME}'
+    RELATIONNAME='bv_ws_wegwijs' 
+    OUTPUTSCHEMA (
+        jsonarray = 'jsonarray' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='ds_wegwijs_jsonarray', sourcetypeid='2003', sourcetypedecimals='0', sourcetypesize='0')  NOT SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_ws_wegwijs I18N us_pst (
+        jsonarray:text
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_ws_wegwijs(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD jsonarray (any) OPT ANY
+        )
+        OUTPUTLIST (jsonarray
+        )
+        WRAPPER (jdbc bv_ws_wegwijs)
+    );
+

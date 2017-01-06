@@ -1,0 +1,239 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdwr_d_dw_d_gem_in_organisatie_wivo
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdwr_d_dw_d_gem_in_organisatie_wivo.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdwr_d_dw_d_gem_in_organisatie_wivo' 
+    OUTPUTSCHEMA (
+        n_organisatie_tk = 'n_organisatie_tk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  NOT NULL SORTABLE,
+        c_toepassingsgebied_nk = 'c_toepassingsgebied_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  NOT NULL SORTABLE,
+        c_organisatie_nk = 'c_organisatie_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  NOT NULL SORTABLE,
+        c_organisatiehierarchie_nk = 'c_organisatiehierarchie_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        n_begindatum_d = 'n_begindatum_d' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  NOT NULL SORTABLE,
+        n_einddatum_d = 'n_einddatum_d' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  NOT NULL SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  NOT NULL SORTABLE,
+        n_org_actueel_nk = 'n_org_actueel_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_context_l = 'c_context_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_omschrijving_label_l = 'c_omschrijving_label_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_omschrijving_kort_l = 'c_omschrijving_kort_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        n_niveau_l = 'n_niveau_l' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='INTEGER', sourcetypeid='4', sourcetypedecimals='0', sourcetypesize='10')  NOT NULL SORTABLE,
+        c_telefoon_l = 'c_telefoon_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_telefoon_alt_l = 'c_telefoon_alt_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_fax_l = 'c_fax_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_fax_alt_l = 'c_fax_alt_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_kbo_nummer_l = 'c_kbo_nummer_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        c_vestigingseenheidsnummer_l = 'c_vestigingseenheidsnummer_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  SORTABLE,
+        c_franse_naam_l = 'c_franse_naam_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_engelse_naam_l = 'c_engelse_naam_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_spaanse_naam_l = 'c_spaanse_naam_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_duitse_naam_l = 'c_duitse_naam_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_rechtsopvolger_l = 'c_rechtsopvolger_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_status_overeenkomst_l = 'c_status_overeenkomst_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1020')  SORTABLE,
+        n_einddatumovereenkomst_d = 'n_einddatumovereenkomst_d' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        n_startdatumovereenkomst_d = 'n_startdatumovereenkomst_d' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        c_mod_l = 'c_mod_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_in_website_vo_l = 'c_in_website_vo_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        n_oprichtingsdecreet_d = 'n_oprichtingsdecreet_d' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        n_inwerkingtreding_d = 'n_inwerkingtreding_d' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        c_rechtsvorm_l = 'c_rechtsvorm_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_personeelsysteem_l = 'c_personeelsysteem_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_categorie_l = 'c_categorie_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  NOT NULL SORTABLE,
+        c_entiteitsvorm_l = 'c_entiteitsvorm_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_omschrijving_code_niv1_l = 'c_omschrijving_code_niv1_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_omschrijving_kort_niv1_l = 'c_omschrijving_kort_niv1_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_omschrijving_lang_niv1_l = 'c_omschrijving_lang_niv1_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='512')  SORTABLE,
+        c_omschrijving_code_niv2_l = 'c_omschrijving_code_niv2_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_omschrijving_kort_niv2_l = 'c_omschrijving_kort_niv2_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_omschrijving_lang_niv2_l = 'c_omschrijving_lang_niv2_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='512')  SORTABLE,
+        c_omschrijving_code_niv3_l = 'c_omschrijving_code_niv3_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_omschrijving_kort_niv3_l = 'c_omschrijving_kort_niv3_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_omschrijving_lang_niv3_l = 'c_omschrijving_lang_niv3_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='512')  SORTABLE,
+        c_omschrijving_code_niv4_l = 'c_omschrijving_code_niv4_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_omschrijving_kort_niv4_l = 'c_omschrijving_kort_niv4_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_omschrijving_lang_niv4_l = 'c_omschrijving_lang_niv4_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='512')  SORTABLE,
+        c_omschrijving_code_niv5_l = 'c_omschrijving_code_niv5_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_omschrijving_kort_niv5_l = 'c_omschrijving_kort_niv5_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_omschrijving_lang_niv5_l = 'c_omschrijving_lang_niv5_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='512')  SORTABLE,
+        c_omschrijving_code_niv6_l = 'c_omschrijving_code_niv6_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_omschrijving_kort_niv6_l = 'c_omschrijving_kort_niv6_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_omschrijving_lang_niv6_l = 'c_omschrijving_lang_niv6_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='512')  SORTABLE,
+        c_omschrijving_code_niv7_l = 'c_omschrijving_code_niv7_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_omschrijving_kort_niv7_l = 'c_omschrijving_kort_niv7_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_omschrijving_lang_niv7_l = 'c_omschrijving_lang_niv7_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='512')  SORTABLE,
+        c_omschrijving_code_niv8_l = 'c_omschrijving_code_niv8_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_omschrijving_kort_niv8_l = 'c_omschrijving_kort_niv8_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_omschrijving_lang_niv8_l = 'c_omschrijving_lang_niv8_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='512')  SORTABLE,
+        c_omschrijving_code_niv9_l = 'c_omschrijving_code_niv9_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_omschrijving_kort_niv9_l = 'c_omschrijving_kort_niv9_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_omschrijving_lang_niv9_l = 'c_omschrijving_lang_niv9_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='512')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='25')  NOT NULL SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='25')  NOT NULL SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  NOT NULL SORTABLE,
+        c_sorteer_s = 'c_sorteer_s' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_esr_l = 'c_esr_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_toezicht_l = 'c_toezicht_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_oprichting_l = 'c_oprichting_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='300')  SORTABLE,
+        c_link_afd_regelgeving_l = 'c_link_afd_regelgeving_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1020')  SORTABLE,
+        c_in_gids_vo_l = 'c_in_gids_vo_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='12')  SORTABLE,
+        c_13ministeries_l = 'c_13ministeries_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  NOT NULL SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdwr_d_dw_d_gem_in_organisatie_wivo I18N us_pst (
+        n_organisatie_tk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        c_toepassingsgebied_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_organisatie_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_organisatiehierarchie_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        n_begindatum_d:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        n_einddatum_d:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        n_org_actueel_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_context_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_omschrijving_label_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_omschrijving_kort_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        n_niveau_l:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '4'), 
+        c_telefoon_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_telefoon_alt_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_fax_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_fax_alt_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_kbo_nummer_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        c_vestigingseenheidsnummer_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        c_franse_naam_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_engelse_naam_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_spaanse_naam_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_duitse_naam_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_rechtsopvolger_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_status_overeenkomst_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1020', sourcetypeid = '12'), 
+        n_einddatumovereenkomst_d:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        n_startdatumovereenkomst_d:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        c_mod_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_in_website_vo_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        n_oprichtingsdecreet_d:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        n_inwerkingtreding_d:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        c_rechtsvorm_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_personeelsysteem_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_categorie_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_entiteitsvorm_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_omschrijving_code_niv1_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_omschrijving_kort_niv1_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_omschrijving_lang_niv1_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '512', sourcetypeid = '12'), 
+        c_omschrijving_code_niv2_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_omschrijving_kort_niv2_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_omschrijving_lang_niv2_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '512', sourcetypeid = '12'), 
+        c_omschrijving_code_niv3_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_omschrijving_kort_niv3_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_omschrijving_lang_niv3_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '512', sourcetypeid = '12'), 
+        c_omschrijving_code_niv4_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_omschrijving_kort_niv4_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_omschrijving_lang_niv4_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '512', sourcetypeid = '12'), 
+        c_omschrijving_code_niv5_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_omschrijving_kort_niv5_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_omschrijving_lang_niv5_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '512', sourcetypeid = '12'), 
+        c_omschrijving_code_niv6_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_omschrijving_kort_niv6_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_omschrijving_lang_niv6_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '512', sourcetypeid = '12'), 
+        c_omschrijving_code_niv7_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_omschrijving_kort_niv7_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_omschrijving_lang_niv7_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '512', sourcetypeid = '12'), 
+        c_omschrijving_code_niv8_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_omschrijving_kort_niv8_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_omschrijving_lang_niv8_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '512', sourcetypeid = '12'), 
+        c_omschrijving_code_niv9_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_omschrijving_kort_niv9_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_omschrijving_lang_niv9_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '512', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '25', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '25', sourcetypeid = '12'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        c_sorteer_s:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_esr_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_toezicht_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_oprichting_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '300', sourcetypeid = '12'), 
+        c_link_afd_regelgeving_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1020', sourcetypeid = '12'), 
+        c_in_gids_vo_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '12', sourcetypeid = '12'), 
+        c_13ministeries_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdwr_d_dw_d_gem_in_organisatie_wivo(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD n_organisatie_tk (any) OPT ANY
+             ADD c_toepassingsgebied_nk (any) OPT ANY
+             ADD c_organisatie_nk (any) OPT ANY
+             ADD c_organisatiehierarchie_nk (any) OPT ANY
+             ADD n_begindatum_d (any) OPT ANY
+             ADD n_einddatum_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD n_org_actueel_nk (any) OPT ANY
+             ADD c_context_l (any) OPT ANY
+             ADD c_omschrijving_label_l (any) OPT ANY
+             ADD c_omschrijving_kort_l (any) OPT ANY
+             ADD n_niveau_l (any) OPT ANY
+             ADD c_telefoon_l (any) OPT ANY
+             ADD c_telefoon_alt_l (any) OPT ANY
+             ADD c_fax_l (any) OPT ANY
+             ADD c_fax_alt_l (any) OPT ANY
+             ADD c_kbo_nummer_l (any) OPT ANY
+             ADD c_vestigingseenheidsnummer_l (any) OPT ANY
+             ADD c_franse_naam_l (any) OPT ANY
+             ADD c_engelse_naam_l (any) OPT ANY
+             ADD c_spaanse_naam_l (any) OPT ANY
+             ADD c_duitse_naam_l (any) OPT ANY
+             ADD c_rechtsopvolger_l (any) OPT ANY
+             ADD c_status_overeenkomst_l (any) OPT ANY
+             ADD n_einddatumovereenkomst_d (any) OPT ANY
+             ADD n_startdatumovereenkomst_d (any) OPT ANY
+             ADD c_mod_l (any) OPT ANY
+             ADD c_in_website_vo_l (any) OPT ANY
+             ADD n_oprichtingsdecreet_d (any) OPT ANY
+             ADD n_inwerkingtreding_d (any) OPT ANY
+             ADD c_rechtsvorm_l (any) OPT ANY
+             ADD c_personeelsysteem_l (any) OPT ANY
+             ADD c_categorie_l (any) OPT ANY
+             ADD c_entiteitsvorm_l (any) OPT ANY
+             ADD c_omschrijving_code_niv1_l (any) OPT ANY
+             ADD c_omschrijving_kort_niv1_l (any) OPT ANY
+             ADD c_omschrijving_lang_niv1_l (any) OPT ANY
+             ADD c_omschrijving_code_niv2_l (any) OPT ANY
+             ADD c_omschrijving_kort_niv2_l (any) OPT ANY
+             ADD c_omschrijving_lang_niv2_l (any) OPT ANY
+             ADD c_omschrijving_code_niv3_l (any) OPT ANY
+             ADD c_omschrijving_kort_niv3_l (any) OPT ANY
+             ADD c_omschrijving_lang_niv3_l (any) OPT ANY
+             ADD c_omschrijving_code_niv4_l (any) OPT ANY
+             ADD c_omschrijving_kort_niv4_l (any) OPT ANY
+             ADD c_omschrijving_lang_niv4_l (any) OPT ANY
+             ADD c_omschrijving_code_niv5_l (any) OPT ANY
+             ADD c_omschrijving_kort_niv5_l (any) OPT ANY
+             ADD c_omschrijving_lang_niv5_l (any) OPT ANY
+             ADD c_omschrijving_code_niv6_l (any) OPT ANY
+             ADD c_omschrijving_kort_niv6_l (any) OPT ANY
+             ADD c_omschrijving_lang_niv6_l (any) OPT ANY
+             ADD c_omschrijving_code_niv7_l (any) OPT ANY
+             ADD c_omschrijving_kort_niv7_l (any) OPT ANY
+             ADD c_omschrijving_lang_niv7_l (any) OPT ANY
+             ADD c_omschrijving_code_niv8_l (any) OPT ANY
+             ADD c_omschrijving_kort_niv8_l (any) OPT ANY
+             ADD c_omschrijving_lang_niv8_l (any) OPT ANY
+             ADD c_omschrijving_code_niv9_l (any) OPT ANY
+             ADD c_omschrijving_kort_niv9_l (any) OPT ANY
+             ADD c_omschrijving_lang_niv9_l (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD c_sorteer_s (any) OPT ANY
+             ADD c_esr_l (any) OPT ANY
+             ADD c_toezicht_l (any) OPT ANY
+             ADD c_oprichting_l (any) OPT ANY
+             ADD c_link_afd_regelgeving_l (any) OPT ANY
+             ADD c_in_gids_vo_l (any) OPT ANY
+             ADD c_13ministeries_l (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, c_13ministeries_l, c_categorie_l, c_context_l, c_duitse_naam_l, c_engelse_naam_l, c_entiteitsvorm_l, c_esr_l, c_fax_alt_l, c_fax_l, c_franse_naam_l, c_in_gids_vo_l, c_in_website_vo_l, c_kbo_nummer_l, c_link_afd_regelgeving_l, c_mod_l, c_omschrijving_code_niv1_l, c_omschrijving_code_niv2_l, c_omschrijving_code_niv3_l, c_omschrijving_code_niv4_l, c_omschrijving_code_niv5_l, c_omschrijving_code_niv6_l, c_omschrijving_code_niv7_l, c_omschrijving_code_niv8_l, c_omschrijving_code_niv9_l, c_omschrijving_kort_l, c_omschrijving_kort_niv1_l, c_omschrijving_kort_niv2_l, c_omschrijving_kort_niv3_l, c_omschrijving_kort_niv4_l, c_omschrijving_kort_niv5_l, c_omschrijving_kort_niv6_l, c_omschrijving_kort_niv7_l, c_omschrijving_kort_niv8_l, c_omschrijving_kort_niv9_l, c_omschrijving_label_l, c_omschrijving_lang_niv1_l, c_omschrijving_lang_niv2_l, c_omschrijving_lang_niv3_l, c_omschrijving_lang_niv4_l, c_omschrijving_lang_niv5_l, c_omschrijving_lang_niv6_l, c_omschrijving_lang_niv7_l, c_omschrijving_lang_niv8_l, c_omschrijving_lang_niv9_l, c_oprichting_l, c_organisatie_nk, c_organisatiehierarchie_nk, c_personeelsysteem_l, c_rechtsopvolger_l, c_rechtsvorm_l, c_sorteer_s, c_spaanse_naam_l, c_status_overeenkomst_l, c_telefoon_alt_l, c_telefoon_l, c_toepassingsgebied_nk, c_toezicht_l, c_vestigingseenheidsnummer_l, n_begindatum_d, n_einddatum_d, n_einddatumovereenkomst_d, n_inwerkingtreding_d, n_niveau_l, n_oprichtingsdecreet_d, n_org_actueel_nk, n_organisatie_tk, n_startdatumovereenkomst_d, s_beheerder_l, s_bron_l, s_insert_d, s_update_d
+        )
+        WRAPPER (jdbc bv_bzpdwr_d_dw_d_gem_in_organisatie_wivo)
+    );
+

@@ -1,0 +1,98 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdwr_d__dw_d_vsgd_gebouw_adres
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdwr_d__dw_d_vsgd_gebouw_adres.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdwr_d__dw_d_vsgd_gebouw_adres' 
+    OUTPUTSCHEMA (
+        gebid = 'gebid' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        oidnr = 'oidnr' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_ean = 'geb_ean' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='18')  SORTABLE,
+        ean_verbruik_type = 'ean_verbruik_type' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='18')  SORTABLE,
+        geb_naam = 'geb_naam' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        geb_site = 'geb_site' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        kbo = 'kbo' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        geb_eig_of_huur_entiteit = 'geb_eig_of_huur_entiteit' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        geb_type_recht = 'geb_type_recht' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='32')  SORTABLE,
+        nis_gemeentecode = 'nis_gemeentecode' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        crab_gemeenteid = 'crab_gemeenteid' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        gemeente = 'gemeente' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='128')  SORTABLE,
+        postcode = 'postcode' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        straatcode = 'straatcode' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        crab_straat_id = 'crab_straat_id' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_straat = 'geb_straat' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        geb_huisnummer = 'geb_huisnummer' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='16')  SORTABLE,
+        geb_busnummer = 'geb_busnummer' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='16')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdwr_d__dw_d_vsgd_gebouw_adres I18N us_pst (
+        gebid:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        oidnr:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_ean:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '18', sourcetypeid = '12'), 
+        ean_verbruik_type:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '18', sourcetypeid = '12'), 
+        geb_naam:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        geb_site:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        kbo:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        geb_eig_of_huur_entiteit:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        geb_type_recht:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '32', sourcetypeid = '12'), 
+        nis_gemeentecode:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        crab_gemeenteid:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        gemeente:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '128', sourcetypeid = '12'), 
+        postcode:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        straatcode:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        crab_straat_id:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_straat:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        geb_huisnummer:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '16', sourcetypeid = '12'), 
+        geb_busnummer:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '16', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdwr_d__dw_d_vsgd_gebouw_adres(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD gebid (any) OPT ANY
+             ADD oidnr (any) OPT ANY
+             ADD geb_ean (any) OPT ANY
+             ADD ean_verbruik_type (any) OPT ANY
+             ADD geb_naam (any) OPT ANY
+             ADD geb_site (any) OPT ANY
+             ADD kbo (any) OPT ANY
+             ADD geb_eig_of_huur_entiteit (any) OPT ANY
+             ADD geb_type_recht (any) OPT ANY
+             ADD nis_gemeentecode (any) OPT ANY
+             ADD crab_gemeenteid (any) OPT ANY
+             ADD gemeente (any) OPT ANY
+             ADD postcode (any) OPT ANY
+             ADD straatcode (any) OPT ANY
+             ADD crab_straat_id (any) OPT ANY
+             ADD geb_straat (any) OPT ANY
+             ADD geb_huisnummer (any) OPT ANY
+             ADD geb_busnummer (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, crab_gemeenteid, crab_straat_id, ean_verbruik_type, geb_busnummer, geb_ean, geb_eig_of_huur_entiteit, geb_huisnummer, geb_naam, geb_site, geb_straat, geb_type_recht, gebid, gemeente, kbo, nis_gemeentecode, oidnr, postcode, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d, straatcode
+        )
+        WRAPPER (jdbc bv_bzpdwr_d__dw_d_vsgd_gebouw_adres)
+    );
+

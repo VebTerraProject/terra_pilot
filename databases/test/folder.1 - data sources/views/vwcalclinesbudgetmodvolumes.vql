@@ -1,0 +1,69 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC vwcalclinesbudgetmodvolumes
+    FOLDER = '/1 - data sources'
+    DATASOURCENAME=janus
+    CATALOGNAME = '${databases.test.folder.1 - data sources.views.jdbc.vwcalclinesbudgetmodvolumes.CATALOGNAME}'
+    SCHEMANAME = '${databases.test.folder.1 - data sources.views.jdbc.vwcalclinesbudgetmodvolumes.SCHEMANAME}'
+    RELATIONNAME='vwCalcLinesBudgetModVolumes' 
+    OUTPUTSCHEMA (
+        invoicenumber = 'INVOICENUMBER' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        bijlagenummer = 'Bijlagenummer' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='27')  SORTABLE,
+        eancode = 'EANCODE' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='60')  SORTABLE,
+        vattariff = 'VATTARIFF' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='int', sourcetypeid='4', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        externalnumber = 'EXTERNALNUMBER' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        facturatieniveau = 'Facturatieniveau' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  NOT NULL SORTABLE,
+        facturatieniveauid = 'FacturatieniveauID' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        commodity = 'commodity' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='4')  SORTABLE,
+        facturatiejaar = 'Facturatiejaar' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='int', sourcetypeid='4', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        name = 'NAME' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  NOT NULL SORTABLE,
+        internalcode = 'INTERNALCODE' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        reason = 'REASON' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='25')  SORTABLE,
+        facturatiemaand = 'Facturatiemaand' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        quantity2 = 'Quantity2' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='decimal', sourcetypeid='3', sourcetypedecimals='18', sourcetypesize='38')  SORTABLE,
+        invoicesubitem = 'INVOICESUBITEM' :'java.lang.String' (OPT) (sourcetyperadix='0', sourcetypename='nvarchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE vwcalclinesbudgetmodvolumes I18N be_euro (
+        invoicenumber:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '-9'), 
+        bijlagenummer:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '27', sourcetypeid = '-9'), 
+        eancode:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '60', sourcetypeid = '-9'), 
+        vattariff:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '4'), 
+        externalnumber:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '-9'), 
+        facturatieniveau:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '-9'), 
+        facturatieniveauid:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '-9'), 
+        commodity:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '4', sourcetypeid = '12'), 
+        facturatiejaar:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '4'), 
+        name:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '-9'), 
+        internalcode:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '-9'), 
+        reason:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '25', sourcetypeid = '-9'), 
+        facturatiemaand:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '-9'), 
+        quantity2:decimal (sourcetyperadix = '10', sourcetypedecimals = '18', sourcetypesize = '38', sourcetypeid = '3'), 
+        invoicesubitem:text (sourcetyperadix = '0', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '-9')
+    )
+    FOLDER = '/1 - data sources'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD vwcalclinesbudgetmodvolumes(
+        I18N be_euro
+        CONSTRAINTS (
+             ADD invoicenumber (any) OPT ANY
+             ADD bijlagenummer (any) OPT ANY
+             ADD eancode (any) OPT ANY
+             ADD vattariff (any) OPT ANY
+             ADD externalnumber (any) OPT ANY
+             ADD facturatieniveau (any) OPT ANY
+             ADD facturatieniveauid (any) OPT ANY
+             ADD commodity (any) OPT ANY
+             ADD facturatiejaar (any) OPT ANY
+             ADD name (any) OPT ANY
+             ADD internalcode (any) OPT ANY
+             ADD reason (any) OPT ANY
+             ADD facturatiemaand (any) OPT ANY
+             ADD quantity2 (any) OPT ANY
+             ADD invoicesubitem (any) OPT ANY
+        )
+        OUTPUTLIST (bijlagenummer, commodity, eancode, externalnumber, facturatiejaar, facturatiemaand, facturatieniveau, facturatieniveauid, internalcode, invoicenumber, invoicesubitem, name, quantity2, reason, vattariff
+        )
+        WRAPPER (jdbc vwcalclinesbudgetmodvolumes)
+    );
+

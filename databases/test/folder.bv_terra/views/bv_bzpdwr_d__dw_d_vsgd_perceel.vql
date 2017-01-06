@@ -1,0 +1,113 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdwr_d__dw_d_vsgd_perceel
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdwr_d__dw_d_vsgd_perceel.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdwr_d__dw_d_vsgd_perceel' 
+    OUTPUTSCHEMA (
+        n_perc_tk = 'n_perc_tk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        c_perc_gemeente_l = 'c_perc_gemeente_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        c_perc_ligging_l = 'c_perc_ligging_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        c_perc_capakey_nk = 'c_perc_capakey_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  NOT NULL SORTABLE,
+        c_perc_percid_nk = 'c_perc_percid_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='21')  NOT NULL SORTABLE,
+        n_perc_adm_opp_f = 'n_perc_adm_opp_f' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_perc_ber_cadmap_opp_f = 'n_perc_ber_cadmap_opp_f' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_perc_ki_f = 'n_perc_ki_f' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        c_perc_lig_nis_l = 'c_perc_lig_nis_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        c_perc_lig_gewest_l = 'c_perc_lig_gewest_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='40')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='INTEGER', sourcetypeid='4', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        c_cadikey_l = 'c_cadikey_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        n_perc_ber_grb_opp_f = 'n_perc_ber_grb_opp_f' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_perc_opg_opp_f = 'n_perc_opg_opp_f' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        c_kadgemnr_l = 'c_kadgemnr_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        c_sectie_l = 'c_sectie_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        c_grondnr_l = 'c_grondnr_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        c_exp_l = 'c_exp_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        c_macht_l = 'c_macht_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='3')  SORTABLE,
+        c_bisnr_l = 'c_bisnr_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='3')  SORTABLE,
+        c_rbh_code_fk = 'c_rbh_code_fk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2')  SORTABLE,
+        c_svnaam_l = 'c_svnaam_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        c_gwp_code_fk = 'c_gwp_code_fk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='4')  SORTABLE,
+        n_lig_nis_fk = 'n_lig_nis_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdwr_d__dw_d_vsgd_perceel I18N us_pst (
+        n_perc_tk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        c_perc_gemeente_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        c_perc_ligging_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        c_perc_capakey_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        c_perc_percid_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '21', sourcetypeid = '12'), 
+        n_perc_adm_opp_f:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_perc_ber_cadmap_opp_f:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_perc_ki_f:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        c_perc_lig_nis_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        c_perc_lig_gewest_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '40', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '4'), 
+        c_cadikey_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        n_perc_ber_grb_opp_f:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_perc_opg_opp_f:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        c_kadgemnr_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        c_sectie_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        c_grondnr_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        c_exp_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        c_macht_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '3', sourcetypeid = '12'), 
+        c_bisnr_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '3', sourcetypeid = '12'), 
+        c_rbh_code_fk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2', sourcetypeid = '12'), 
+        c_svnaam_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        c_gwp_code_fk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '4', sourcetypeid = '12'), 
+        n_lig_nis_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdwr_d__dw_d_vsgd_perceel(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD n_perc_tk (any) OPT ANY
+             ADD c_perc_gemeente_l (any) OPT ANY
+             ADD c_perc_ligging_l (any) OPT ANY
+             ADD c_perc_capakey_nk (any) OPT ANY
+             ADD c_perc_percid_nk (any) OPT ANY
+             ADD n_perc_adm_opp_f (any) OPT ANY
+             ADD n_perc_ber_cadmap_opp_f (any) OPT ANY
+             ADD n_perc_ki_f (any) OPT ANY
+             ADD c_perc_lig_nis_l (any) OPT ANY
+             ADD c_perc_lig_gewest_l (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+             ADD c_cadikey_l (any) OPT ANY
+             ADD n_perc_ber_grb_opp_f (any) OPT ANY
+             ADD n_perc_opg_opp_f (any) OPT ANY
+             ADD c_kadgemnr_l (any) OPT ANY
+             ADD c_sectie_l (any) OPT ANY
+             ADD c_grondnr_l (any) OPT ANY
+             ADD c_exp_l (any) OPT ANY
+             ADD c_macht_l (any) OPT ANY
+             ADD c_bisnr_l (any) OPT ANY
+             ADD c_rbh_code_fk (any) OPT ANY
+             ADD c_svnaam_l (any) OPT ANY
+             ADD c_gwp_code_fk (any) OPT ANY
+             ADD n_lig_nis_fk (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, c_bisnr_l, c_cadikey_l, c_exp_l, c_grondnr_l, c_gwp_code_fk, c_kadgemnr_l, c_macht_l, c_perc_capakey_nk, c_perc_gemeente_l, c_perc_lig_gewest_l, c_perc_lig_nis_l, c_perc_ligging_l, c_perc_percid_nk, c_rbh_code_fk, c_sectie_l, c_svnaam_l, n_lig_nis_fk, n_perc_adm_opp_f, n_perc_ber_cadmap_opp_f, n_perc_ber_grb_opp_f, n_perc_ki_f, n_perc_opg_opp_f, n_perc_tk, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d
+        )
+        WRAPPER (jdbc bv_bzpdwr_d__dw_d_vsgd_perceel)
+    );
+

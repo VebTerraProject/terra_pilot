@@ -1,0 +1,72 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC test_exporttable
+    FOLDER = '/2 - base views/amz_redshift_terdwh'
+    DATASOURCENAME=ds_ar_terdwh
+    CATALOGNAME = '${databases.test.folder.2 - base views.folder.amz_redshift_terdwh.views.jdbc.test_exporttable.CATALOGNAME}'
+    SCHEMANAME = '${databases.test.folder.2 - base views.folder.amz_redshift_terdwh.views.jdbc.test_exporttable.SCHEMANAME}'
+    RELATIONNAME='test_exporttable' 
+    OUTPUTSCHEMA (
+        col1 = 'col1' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        col2 = 'col2' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        col3 = 'col3' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        col4 = 'col4' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        col5 = 'col5' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        col6 = 'col6' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        col7 = 'col7' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        col8 = 'col8' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        col9 = 'col9' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        col10 = 'col10' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        col11 = 'col11' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        col12 = 'col12' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        col13 = 'col13' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        col14 = 'col14' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        col15 = 'col15' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        col16 = 'col16' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_terdwh__test_exporttable I18N uy (
+        col1:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        col2:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        col3:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        col4:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        col5:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        col6:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        col7:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        col8:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        col9:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        col10:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        col11:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        col12:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        col13:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        col14:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        col15:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        col16:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12')
+    )
+    FOLDER = '/2 - base views/amz_redshift_terdwh'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD test_exporttable(
+        I18N uy
+        CONSTRAINTS (
+             ADD col1 (any) OPT ANY
+             ADD col2 (any) OPT ANY
+             ADD col3 (any) OPT ANY
+             ADD col4 (any) OPT ANY
+             ADD col5 (any) OPT ANY
+             ADD col6 (any) OPT ANY
+             ADD col7 (any) OPT ANY
+             ADD col8 (any) OPT ANY
+             ADD col9 (any) OPT ANY
+             ADD col10 (any) OPT ANY
+             ADD col11 (any) OPT ANY
+             ADD col12 (any) OPT ANY
+             ADD col13 (any) OPT ANY
+             ADD col14 (any) OPT ANY
+             ADD col15 (any) OPT ANY
+             ADD col16 (any) OPT ANY
+        )
+        OUTPUTLIST (col1, col10, col11, col12, col13, col14, col15, col16, col2, col3, col4, col5, col6, col7, col8, col9
+        )
+        WRAPPER (jdbc test_exporttable)
+    );
+

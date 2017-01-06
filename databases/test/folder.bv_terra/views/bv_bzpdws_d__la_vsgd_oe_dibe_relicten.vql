@@ -1,0 +1,71 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdws_d__la_vsgd_oe_dibe_relicten
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdws_d__la_vsgd_oe_dibe_relicten.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdws_d__la_vsgd_oe_dibe_relicten' 
+    OUTPUTSCHEMA (
+        capakey = 'capakey' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        relict_id = 'relict_id' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        naam = 'naam' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='254')  SORTABLE,
+        provincie_id = 'provincie_id' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        provincie = 'provincie' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        gemeente_id = 'gemeente_id' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        gemeente = 'gemeente' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        adres_id = 'adres_id' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        straat_id = 'straat_id' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        straat = 'straat' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        huisnummer = 'huisnummer' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        status = 'status' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        vastgesteld = 'vastgesteld' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='3')  SORTABLE,
+        url = 'url' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='254')  SORTABLE,
+        oppervlakte_perceel_vdb = 'oppervlakte_perceel_vdb' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        erfgoed_type = 'erfgoed_type' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='254')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdws_d__la_vsgd_oe_dibe_relicten I18N us_pst (
+        capakey:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        relict_id:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        naam:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '254', sourcetypeid = '12'), 
+        provincie_id:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        provincie:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        gemeente_id:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        gemeente:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        adres_id:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        straat_id:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        straat:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        huisnummer:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        status:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        vastgesteld:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '3', sourcetypeid = '12'), 
+        url:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '254', sourcetypeid = '12'), 
+        oppervlakte_perceel_vdb:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        erfgoed_type:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '254', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdws_d__la_vsgd_oe_dibe_relicten(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD capakey (any) OPT ANY
+             ADD relict_id (any) OPT ANY
+             ADD naam (any) OPT ANY
+             ADD provincie_id (any) OPT ANY
+             ADD provincie (any) OPT ANY
+             ADD gemeente_id (any) OPT ANY
+             ADD gemeente (any) OPT ANY
+             ADD adres_id (any) OPT ANY
+             ADD straat_id (any) OPT ANY
+             ADD straat (any) OPT ANY
+             ADD huisnummer (any) OPT ANY
+             ADD status (any) OPT ANY
+             ADD vastgesteld (any) OPT ANY
+             ADD url (any) OPT ANY
+             ADD oppervlakte_perceel_vdb (any) OPT ANY
+             ADD erfgoed_type (any) OPT ANY
+        )
+        OUTPUTLIST (adres_id, capakey, erfgoed_type, gemeente, gemeente_id, huisnummer, naam, oppervlakte_perceel_vdb, provincie, provincie_id, relict_id, status, straat, straat_id, url, vastgesteld
+        )
+        WRAPPER (jdbc bv_bzpdws_d__la_vsgd_oe_dibe_relicten)
+    );
+

@@ -1,0 +1,74 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdws_d__la_vsgd_gebouw_vergunning
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdws_d__la_vsgd_gebouw_vergunning.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdws_d__la_vsgd_gebouw_vergunning' 
+    OUTPUTSCHEMA (
+        verg_id = 'verg_id' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  NOT NULL SORTABLE,
+        verg_geb_id = 'verg_geb_id' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        verg_verg = 'verg_verg' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        verg_klas = 'verg_klas' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        verg_beg_dat = 'verg_beg_dat' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        verg_eind_dat = 'verg_eind_dat' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        verg_ins_date = 'verg_ins_date' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        verg_ins_user = 'verg_ins_user' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        verg_upd_date = 'verg_upd_date' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        verg_upd_user = 'verg_upd_user' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdws_d__la_vsgd_gebouw_vergunning I18N us_pst (
+        verg_id:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        verg_geb_id:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        verg_verg:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        verg_klas:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        verg_beg_dat:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        verg_eind_dat:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        verg_ins_date:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        verg_ins_user:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        verg_upd_date:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        verg_upd_user:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdws_d__la_vsgd_gebouw_vergunning(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD verg_id (any) OPT ANY
+             ADD verg_geb_id (any) OPT ANY
+             ADD verg_verg (any) OPT ANY
+             ADD verg_klas (any) OPT ANY
+             ADD verg_beg_dat (any) OPT ANY
+             ADD verg_eind_dat (any) OPT ANY
+             ADD verg_ins_date (any) OPT ANY
+             ADD verg_ins_user (any) OPT ANY
+             ADD verg_upd_date (any) OPT ANY
+             ADD verg_upd_user (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d, verg_beg_dat, verg_eind_dat, verg_geb_id, verg_id, verg_ins_date, verg_ins_user, verg_klas, verg_upd_date, verg_upd_user, verg_verg
+        )
+        WRAPPER (jdbc bv_bzpdws_d__la_vsgd_gebouw_vergunning)
+    );
+

@@ -1,0 +1,80 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdws_d__la_vsgd_energie_besparing
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdws_d__la_vsgd_energie_besparing.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdws_d__la_vsgd_energie_besparing' 
+    OUTPUTSCHEMA (
+        besp_id = 'besp_id' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  NOT NULL SORTABLE,
+        besp_geb_id = 'besp_geb_id' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        besp_type = 'besp_type' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        besp_oms = 'besp_oms' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        besp_toes = 'besp_toes' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        besp_beg = 'besp_beg' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        besp_eind = 'besp_eind' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        besp_ins_date = 'besp_ins_date' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        besp_ins_user = 'besp_ins_user' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        besp_upd_date = 'besp_upd_date' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        besp_upd_user = 'besp_upd_user' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        besp_audi = 'besp_audi' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdws_d__la_vsgd_energie_besparing I18N us_pst (
+        besp_id:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        besp_geb_id:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        besp_type:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        besp_oms:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        besp_toes:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        besp_beg:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        besp_eind:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        besp_ins_date:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        besp_ins_user:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        besp_upd_date:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        besp_upd_user:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        besp_audi:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdws_d__la_vsgd_energie_besparing(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD besp_id (any) OPT ANY
+             ADD besp_geb_id (any) OPT ANY
+             ADD besp_type (any) OPT ANY
+             ADD besp_oms (any) OPT ANY
+             ADD besp_toes (any) OPT ANY
+             ADD besp_beg (any) OPT ANY
+             ADD besp_eind (any) OPT ANY
+             ADD besp_ins_date (any) OPT ANY
+             ADD besp_ins_user (any) OPT ANY
+             ADD besp_upd_date (any) OPT ANY
+             ADD besp_upd_user (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+             ADD besp_audi (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, besp_audi, besp_beg, besp_eind, besp_geb_id, besp_id, besp_ins_date, besp_ins_user, besp_oms, besp_toes, besp_type, besp_upd_date, besp_upd_user, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d
+        )
+        WRAPPER (jdbc bv_bzpdws_d__la_vsgd_energie_besparing)
+    );
+

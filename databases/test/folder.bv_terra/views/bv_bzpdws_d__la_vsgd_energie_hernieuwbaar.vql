@@ -1,0 +1,80 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdws_d__la_vsgd_energie_hernieuwbaar
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdws_d__la_vsgd_energie_hernieuwbaar.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdws_d__la_vsgd_energie_hernieuwbaar' 
+    OUTPUTSCHEMA (
+        hern_id = 'hern_id' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  NOT NULL SORTABLE,
+        hern_geb_id = 'hern_geb_id' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        hern_type = 'hern_type' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        hern_lev_id = 'hern_lev_id' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        hern_ean = 'hern_ean' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        hern_verm = 'hern_verm' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        hern_opbr = 'hern_opbr' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        hern_jaar = 'hern_jaar' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        hern_ins_date = 'hern_ins_date' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        hern_ins_user = 'hern_ins_user' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        hern_upd_date = 'hern_upd_date' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        hern_upd_user = 'hern_upd_user' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdws_d__la_vsgd_energie_hernieuwbaar I18N us_pst (
+        hern_id:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        hern_geb_id:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        hern_type:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        hern_lev_id:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        hern_ean:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        hern_verm:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        hern_opbr:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        hern_jaar:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        hern_ins_date:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        hern_ins_user:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        hern_upd_date:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        hern_upd_user:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdws_d__la_vsgd_energie_hernieuwbaar(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD hern_id (any) OPT ANY
+             ADD hern_geb_id (any) OPT ANY
+             ADD hern_type (any) OPT ANY
+             ADD hern_lev_id (any) OPT ANY
+             ADD hern_ean (any) OPT ANY
+             ADD hern_verm (any) OPT ANY
+             ADD hern_opbr (any) OPT ANY
+             ADD hern_jaar (any) OPT ANY
+             ADD hern_ins_date (any) OPT ANY
+             ADD hern_ins_user (any) OPT ANY
+             ADD hern_upd_date (any) OPT ANY
+             ADD hern_upd_user (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, hern_ean, hern_geb_id, hern_id, hern_ins_date, hern_ins_user, hern_jaar, hern_lev_id, hern_opbr, hern_type, hern_upd_date, hern_upd_user, hern_verm, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d
+        )
+        WRAPPER (jdbc bv_bzpdws_d__la_vsgd_energie_hernieuwbaar)
+    );
+

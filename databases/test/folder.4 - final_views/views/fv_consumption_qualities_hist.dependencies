@@ -1,0 +1,9 @@
+﻿/databases/test/folder.4 - final_views/4 - final_views.vql
+/databases/test/folder.3 - derived views/3 - derived views.vql
+/databases/test/folder.2 - base views/2 - base views.vql
+/maps/i18n/be_gmt.vql
+/databases/test/folder.1 - data sources/1 - data sources.vql
+/databases/test/folder.1 - data sources/folder.redshift/redshift.vql
+/databases/test/folder.1 - data sources/folder.redshift/datasources/jdbc/ds_ar_terdwh.vql
+/databases/test/folder.2 - base views/views/bv_consumption_qualities.vql
+/databases/test/folder.3 - derived views/views/dv_01_consumption_qualities_hist.vql

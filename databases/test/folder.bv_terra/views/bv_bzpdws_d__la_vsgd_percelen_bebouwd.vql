@@ -1,0 +1,35 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdws_d__la_vsgd_percelen_bebouwd
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdws_d__la_vsgd_percelen_bebouwd.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdws_d__la_vsgd_percelen_bebouwd' 
+    OUTPUTSCHEMA (
+        c_capakey_nk = 'c_capakey_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        c_bebouwd_l = 'c_bebouwd_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        n_opp_bebouwd_f = 'n_opp_bebouwd_f' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        c_refjaar_l = 'c_refjaar_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='4')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdws_d__la_vsgd_percelen_bebouwd I18N us_pst (
+        c_capakey_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        c_bebouwd_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        n_opp_bebouwd_f:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        c_refjaar_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '4', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdws_d__la_vsgd_percelen_bebouwd(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD c_capakey_nk (any) OPT ANY
+             ADD c_bebouwd_l (any) OPT ANY
+             ADD n_opp_bebouwd_f (any) OPT ANY
+             ADD c_refjaar_l (any) OPT ANY
+        )
+        OUTPUTLIST (c_bebouwd_l, c_capakey_nk, c_refjaar_l, n_opp_bebouwd_f
+        )
+        WRAPPER (jdbc bv_bzpdws_d__la_vsgd_percelen_bebouwd)
+    );
+

@@ -1,0 +1,56 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdwr_d__dw_d_vsgd_kadastraal_recht
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdwr_d__dw_d_vsgd_kadastraal_recht.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdwr_d__dw_d_vsgd_kadastraal_recht' 
+    OUTPUTSCHEMA (
+        n_kadrecht_tk = 'n_kadrecht_tk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        c_kadrecht_nk = 'c_kadrecht_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  NOT NULL SORTABLE,
+        c_kadrecht_omschrijving_l = 'c_kadrecht_omschrijving_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  NOT NULL SORTABLE,
+        c_sorteer_s = 'c_sorteer_s' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  NOT NULL SORTABLE,
+        c_actief_b = 'c_actief_b' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  NOT NULL SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='32')  NOT NULL SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='32')  NOT NULL SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  NOT NULL SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  NOT NULL SORTABLE,
+        n_loadid_l = 'n_loadid_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        c_kadrecht_groep_l = 'c_kadrecht_groep_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdwr_d__dw_d_vsgd_kadastraal_recht I18N us_pst (
+        n_kadrecht_tk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        c_kadrecht_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_kadrecht_omschrijving_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_sorteer_s:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_actief_b:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '32', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '32', sourcetypeid = '12'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        n_loadid_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        c_kadrecht_groep_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdwr_d__dw_d_vsgd_kadastraal_recht(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD n_kadrecht_tk (any) OPT ANY
+             ADD c_kadrecht_nk (any) OPT ANY
+             ADD c_kadrecht_omschrijving_l (any) OPT ANY
+             ADD c_sorteer_s (any) OPT ANY
+             ADD c_actief_b (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD n_loadid_l (any) OPT ANY
+             ADD c_kadrecht_groep_l (any) OPT ANY
+        )
+        OUTPUTLIST (c_actief_b, c_kadrecht_groep_l, c_kadrecht_nk, c_kadrecht_omschrijving_l, c_sorteer_s, n_kadrecht_tk, n_loadid_l, s_beheerder_l, s_bron_l, s_insert_d, s_update_d
+        )
+        WRAPPER (jdbc bv_bzpdwr_d__dw_d_vsgd_kadastraal_recht)
+    );
+

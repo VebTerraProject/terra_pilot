@@ -1,0 +1,332 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdwr_d__dw_d_vsgd_in_gebouw
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdwr_d__dw_d_vsgd_in_gebouw.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdwr_d__dw_d_vsgd_in_gebouw' 
+    OUTPUTSCHEMA (
+        n_gebouw_tk = 'n_gebouw_tk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        d_waarneming_dt = 'd_waarneming_dt' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  NOT NULL SORTABLE,
+        n_laatste_jaar_l = 'n_laatste_jaar_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='4')  SORTABLE,
+        c_geb_iden_arch_nk = 'c_geb_iden_arch_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_geb_iden_apex_nk = 'c_geb_iden_apex_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_geb_iden_capa_nk = 'c_geb_iden_capa_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_geb_iden_perc_nk = 'c_geb_iden_perc_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_geb_iden_po_nk = 'c_geb_iden_po_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_geb_iden_nk = 'c_geb_iden_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        n_cat_bouwjaar_l = 'n_cat_bouwjaar_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        n_gebouw_site_fk = 'n_gebouw_site_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        n_gebouw_type_fk = 'n_gebouw_type_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        n_org_geb_ver_fk = 'n_org_geb_ver_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  NOT NULL SORTABLE,
+        n_org_geb_beh_fk = 'n_org_geb_beh_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  NOT NULL SORTABLE,
+        n_org_lok_aanspr_fk = 'n_org_lok_aanspr_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  NOT NULL SORTABLE,
+        n_org_ver_archief_fk = 'n_org_ver_archief_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  NOT NULL SORTABLE,
+        n_org_adv_prev_fk = 'n_org_adv_prev_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  NOT NULL SORTABLE,
+        n_org_ver_energie_fk = 'n_org_ver_energie_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  NOT NULL SORTABLE,
+        n_org_dataverantwoordelijke_fk = 'n_org_dataverantwoordelijke_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  NOT NULL SORTABLE,
+        c_geb_naam_l = 'c_geb_naam_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        n_geb_long_l = 'n_geb_long_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_geb_lat_l = 'n_geb_lat_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        c_geb_geo_oid_l = 'c_geb_geo_oid_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_geb_geo_link_l = 'c_geb_geo_link_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        b_geb_geo_corr_l = 'b_geb_geo_corr_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_geb_geo_corr_nr_l = 'c_geb_geo_corr_nr_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_geb_naam_conv_l = 'c_geb_naam_conv_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_geb_naam_off_l = 'c_geb_naam_off_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_geb_naam_gek_l = 'c_geb_naam_gek_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_geb_site_fmis_l = 'c_geb_site_fmis_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        n_geb_bouwjaar_l = 'n_geb_bouwjaar_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  SORTABLE,
+        b_geb_circ_pmh_l = 'b_geb_circ_pmh_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_sanit_pmh_l = 'b_geb_sanit_pmh_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_drmp_loos_l = 'b_geb_drmp_loos_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_publ_l = 'b_geb_publ_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_comp_l = 'b_geb_comp_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_verw_l = 'b_geb_verw_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_gekl_l = 'b_geb_gekl_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_expired_l = 'b_geb_expired_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_mede_eig_l = 'b_geb_mede_eig_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        c_geb_groen_stro_l = 'c_geb_groen_stro_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  SORTABLE,
+        n_groen_stro_aang_perc_l = 'n_groen_stro_aang_perc_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_geb_nw_perc_m = 'n_geb_nw_perc_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        c_adres_land_l = 'c_adres_land_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_adres_postcode_l = 'c_adres_postcode_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        c_adres_gemeente_l = 'c_adres_gemeente_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_adres_straat_l = 'c_adres_straat_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_adres_nummer_l = 'c_adres_nummer_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        c_adres_bus_l = 'c_adres_bus_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        c_bezw_recht_l = 'c_bezw_recht_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_eigenaars_vo_naam = 'c_eigenaars_vo_naam' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_eigenaars_nvo_naam = 'c_eigenaars_nvo_naam' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_eigenaars_vo_kbo = 'c_eigenaars_vo_kbo' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_eigenaars_nvo_kbo = 'c_eigenaars_nvo_kbo' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_eigenaars_np_rp = 'c_eigenaars_np_rp' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_eigenaars_perc = 'c_eigenaars_perc' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_eigenaars_recht = 'c_eigenaars_recht' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_gebruikers_vo_naam = 'c_gebruikers_vo_naam' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_gebruikers_nvo_naam = 'c_gebruikers_nvo_naam' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_gebruikers_vo_kbo = 'c_gebruikers_vo_kbo' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_gebruikers_nvo_kbo = 'c_gebruikers_nvo_kbo' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_gebruikers_np_rp = 'c_gebruikers_np_rp' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_gebruikers_recht = 'c_gebruikers_recht' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_opmerkingen_l = 'c_opmerkingen_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_labels_l = 'c_labels_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_labels_score_l = 'c_labels_score_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        c_fmis_code_nk = 'c_fmis_code_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_fmis_gebouwnaam_l = 'c_fmis_gebouwnaam_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        c_onroerende_kunst_l = 'c_onroerende_kunst_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        c_onroerend_erfgoed_l = 'c_onroerend_erfgoed_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        n_geb_jaar_wijzig_l = 'n_geb_jaar_wijzig_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  SORTABLE,
+        c_gebruikers_huur_l = 'c_gebruikers_huur_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_gebruikers_opp_l = 'c_gebruikers_opp_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_gebruikers_aant_werkpl_l = 'c_gebruikers_aant_werkpl_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_gebruikers_aant_auto_l = 'c_gebruikers_aant_auto_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_hernieuwbare_productie_l = 'c_hernieuwbare_productie_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_hernieuwbare_energ_type_l = 'c_hernieuwbare_energ_type_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_enrg_besp_audit_l = 'c_enrg_besp_audit_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_enrg_besp_eind_l = 'c_enrg_besp_eind_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_enrg_besp_beg_l = 'c_enrg_besp_beg_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_enrg_besp_toes_l = 'c_enrg_besp_toes_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_enrg_besp_oms_l = 'c_enrg_besp_oms_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        c_enrg_besp_type_l = 'c_enrg_besp_type_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='2000')  SORTABLE,
+        n_laatste_l = 'n_laatste_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='4')  SORTABLE,
+        b_geb_elek_l = 'b_geb_elek_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_gas_l = 'b_geb_gas_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_stok_l = 'b_geb_stok_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_watr_l = 'b_geb_watr_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        c_geb_koop_l = 'c_geb_koop_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        n_geb_toes_date_mand_l = 'n_geb_toes_date_mand_l' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        n_geb_toes_date_jaar_l = 'n_geb_toes_date_jaar_l' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        n_org_geb_beh_vsgd_fk = 'n_org_geb_beh_vsgd_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        n_gebr_aant_pers_l = 'n_gebr_aant_pers_l' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        n_org_dataverantwoordelijke_nk = 'n_org_dataverantwoordelijke_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        c_gebruiker_np_rp_tmp = 'c_gebruiker_np_rp_tmp' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        c_eigenaar_np_rp_tmp = 'c_eigenaar_np_rp_tmp' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdwr_d__dw_d_vsgd_in_gebouw I18N us_pst (
+        n_gebouw_tk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        d_waarneming_dt:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        n_laatste_jaar_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '4', sourcetypeid = '12'), 
+        c_geb_iden_arch_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_geb_iden_apex_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_geb_iden_capa_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_geb_iden_perc_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_geb_iden_po_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_geb_iden_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        n_cat_bouwjaar_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        n_gebouw_site_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_gebouw_type_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_org_geb_ver_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        n_org_geb_beh_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        n_org_lok_aanspr_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        n_org_ver_archief_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        n_org_adv_prev_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        n_org_ver_energie_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        n_org_dataverantwoordelijke_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        c_geb_naam_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        n_geb_long_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_lat_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        c_geb_geo_oid_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_geb_geo_link_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        b_geb_geo_corr_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_geb_geo_corr_nr_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_geb_naam_conv_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_geb_naam_off_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_geb_naam_gek_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_geb_site_fmis_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        n_geb_bouwjaar_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        b_geb_circ_pmh_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_sanit_pmh_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_drmp_loos_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_publ_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_comp_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_verw_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_gekl_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_expired_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_mede_eig_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        c_geb_groen_stro_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        n_groen_stro_aang_perc_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_nw_perc_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        c_adres_land_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_adres_postcode_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        c_adres_gemeente_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_adres_straat_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_adres_nummer_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        c_adres_bus_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        c_bezw_recht_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_eigenaars_vo_naam:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_eigenaars_nvo_naam:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_eigenaars_vo_kbo:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_eigenaars_nvo_kbo:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_eigenaars_np_rp:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_eigenaars_perc:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_eigenaars_recht:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_gebruikers_vo_naam:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_gebruikers_nvo_naam:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_gebruikers_vo_kbo:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_gebruikers_nvo_kbo:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_gebruikers_np_rp:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_gebruikers_recht:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_opmerkingen_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_labels_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_labels_score_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        c_fmis_code_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_fmis_gebouwnaam_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        c_onroerende_kunst_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        c_onroerend_erfgoed_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        n_geb_jaar_wijzig_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        c_gebruikers_huur_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_gebruikers_opp_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_gebruikers_aant_werkpl_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_gebruikers_aant_auto_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_hernieuwbare_productie_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_hernieuwbare_energ_type_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_enrg_besp_audit_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_enrg_besp_eind_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_enrg_besp_beg_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_enrg_besp_toes_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_enrg_besp_oms_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        c_enrg_besp_type_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '2000', sourcetypeid = '12'), 
+        n_laatste_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '4', sourcetypeid = '12'), 
+        b_geb_elek_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_gas_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_stok_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_watr_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        c_geb_koop_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        n_geb_toes_date_mand_l:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        n_geb_toes_date_jaar_l:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        n_org_geb_beh_vsgd_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        n_gebr_aant_pers_l:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        n_org_dataverantwoordelijke_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        c_gebruiker_np_rp_tmp:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        c_eigenaar_np_rp_tmp:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdwr_d__dw_d_vsgd_in_gebouw(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD n_gebouw_tk (any) OPT ANY
+             ADD d_waarneming_dt (any) OPT ANY
+             ADD n_laatste_jaar_l (any) OPT ANY
+             ADD c_geb_iden_arch_nk (any) OPT ANY
+             ADD c_geb_iden_apex_nk (any) OPT ANY
+             ADD c_geb_iden_capa_nk (any) OPT ANY
+             ADD c_geb_iden_perc_nk (any) OPT ANY
+             ADD c_geb_iden_po_nk (any) OPT ANY
+             ADD c_geb_iden_nk (any) OPT ANY
+             ADD n_cat_bouwjaar_l (any) OPT ANY
+             ADD n_gebouw_site_fk (any) OPT ANY
+             ADD n_gebouw_type_fk (any) OPT ANY
+             ADD n_org_geb_ver_fk (any) OPT ANY
+             ADD n_org_geb_beh_fk (any) OPT ANY
+             ADD n_org_lok_aanspr_fk (any) OPT ANY
+             ADD n_org_ver_archief_fk (any) OPT ANY
+             ADD n_org_adv_prev_fk (any) OPT ANY
+             ADD n_org_ver_energie_fk (any) OPT ANY
+             ADD n_org_dataverantwoordelijke_fk (any) OPT ANY
+             ADD c_geb_naam_l (any) OPT ANY
+             ADD n_geb_long_l (any) OPT ANY
+             ADD n_geb_lat_l (any) OPT ANY
+             ADD c_geb_geo_oid_l (any) OPT ANY
+             ADD c_geb_geo_link_l (any) OPT ANY
+             ADD b_geb_geo_corr_l (any) OPT ANY
+             ADD c_geb_geo_corr_nr_l (any) OPT ANY
+             ADD c_geb_naam_conv_l (any) OPT ANY
+             ADD c_geb_naam_off_l (any) OPT ANY
+             ADD c_geb_naam_gek_l (any) OPT ANY
+             ADD c_geb_site_fmis_l (any) OPT ANY
+             ADD n_geb_bouwjaar_l (any) OPT ANY
+             ADD b_geb_circ_pmh_l (any) OPT ANY
+             ADD b_geb_sanit_pmh_l (any) OPT ANY
+             ADD b_geb_drmp_loos_l (any) OPT ANY
+             ADD b_geb_publ_l (any) OPT ANY
+             ADD b_geb_comp_l (any) OPT ANY
+             ADD b_geb_verw_l (any) OPT ANY
+             ADD b_geb_gekl_l (any) OPT ANY
+             ADD b_geb_expired_l (any) OPT ANY
+             ADD b_geb_mede_eig_l (any) OPT ANY
+             ADD c_geb_groen_stro_l (any) OPT ANY
+             ADD n_groen_stro_aang_perc_l (any) OPT ANY
+             ADD n_geb_nw_perc_m (any) OPT ANY
+             ADD c_adres_land_l (any) OPT ANY
+             ADD c_adres_postcode_l (any) OPT ANY
+             ADD c_adres_gemeente_l (any) OPT ANY
+             ADD c_adres_straat_l (any) OPT ANY
+             ADD c_adres_nummer_l (any) OPT ANY
+             ADD c_adres_bus_l (any) OPT ANY
+             ADD c_bezw_recht_l (any) OPT ANY
+             ADD c_eigenaars_vo_naam (any) OPT ANY
+             ADD c_eigenaars_nvo_naam (any) OPT ANY
+             ADD c_eigenaars_vo_kbo (any) OPT ANY
+             ADD c_eigenaars_nvo_kbo (any) OPT ANY
+             ADD c_eigenaars_np_rp (any) OPT ANY
+             ADD c_eigenaars_perc (any) OPT ANY
+             ADD c_eigenaars_recht (any) OPT ANY
+             ADD c_gebruikers_vo_naam (any) OPT ANY
+             ADD c_gebruikers_nvo_naam (any) OPT ANY
+             ADD c_gebruikers_vo_kbo (any) OPT ANY
+             ADD c_gebruikers_nvo_kbo (any) OPT ANY
+             ADD c_gebruikers_np_rp (any) OPT ANY
+             ADD c_gebruikers_recht (any) OPT ANY
+             ADD c_opmerkingen_l (any) OPT ANY
+             ADD c_labels_l (any) OPT ANY
+             ADD c_labels_score_l (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+             ADD c_fmis_code_nk (any) OPT ANY
+             ADD c_fmis_gebouwnaam_l (any) OPT ANY
+             ADD c_onroerende_kunst_l (any) OPT ANY
+             ADD c_onroerend_erfgoed_l (any) OPT ANY
+             ADD n_geb_jaar_wijzig_l (any) OPT ANY
+             ADD c_gebruikers_huur_l (any) OPT ANY
+             ADD c_gebruikers_opp_l (any) OPT ANY
+             ADD c_gebruikers_aant_werkpl_l (any) OPT ANY
+             ADD c_gebruikers_aant_auto_l (any) OPT ANY
+             ADD c_hernieuwbare_productie_l (any) OPT ANY
+             ADD c_hernieuwbare_energ_type_l (any) OPT ANY
+             ADD c_enrg_besp_audit_l (any) OPT ANY
+             ADD c_enrg_besp_eind_l (any) OPT ANY
+             ADD c_enrg_besp_beg_l (any) OPT ANY
+             ADD c_enrg_besp_toes_l (any) OPT ANY
+             ADD c_enrg_besp_oms_l (any) OPT ANY
+             ADD c_enrg_besp_type_l (any) OPT ANY
+             ADD n_laatste_l (any) OPT ANY
+             ADD b_geb_elek_l (any) OPT ANY
+             ADD b_geb_gas_l (any) OPT ANY
+             ADD b_geb_stok_l (any) OPT ANY
+             ADD b_geb_watr_l (any) OPT ANY
+             ADD c_geb_koop_l (any) OPT ANY
+             ADD n_geb_toes_date_mand_l (any) OPT ANY
+             ADD n_geb_toes_date_jaar_l (any) OPT ANY
+             ADD n_org_geb_beh_vsgd_fk (any) OPT ANY
+             ADD n_gebr_aant_pers_l (any) OPT ANY
+             ADD n_org_dataverantwoordelijke_nk (any) OPT ANY
+             ADD c_gebruiker_np_rp_tmp (any) OPT ANY
+             ADD c_eigenaar_np_rp_tmp (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, b_geb_circ_pmh_l, b_geb_comp_l, b_geb_drmp_loos_l, b_geb_elek_l, b_geb_expired_l, b_geb_gas_l, b_geb_gekl_l, b_geb_geo_corr_l, b_geb_mede_eig_l, b_geb_publ_l, b_geb_sanit_pmh_l, b_geb_stok_l, b_geb_verw_l, b_geb_watr_l, c_adres_bus_l, c_adres_gemeente_l, c_adres_land_l, c_adres_nummer_l, c_adres_postcode_l, c_adres_straat_l, c_bezw_recht_l, c_eigenaar_np_rp_tmp, c_eigenaars_np_rp, c_eigenaars_nvo_kbo, c_eigenaars_nvo_naam, c_eigenaars_perc, c_eigenaars_recht, c_eigenaars_vo_kbo, c_eigenaars_vo_naam, c_enrg_besp_audit_l, c_enrg_besp_beg_l, c_enrg_besp_eind_l, c_enrg_besp_oms_l, c_enrg_besp_toes_l, c_enrg_besp_type_l, c_fmis_code_nk, c_fmis_gebouwnaam_l, c_geb_geo_corr_nr_l, c_geb_geo_link_l, c_geb_geo_oid_l, c_geb_groen_stro_l, c_geb_iden_apex_nk, c_geb_iden_arch_nk, c_geb_iden_capa_nk, c_geb_iden_nk, c_geb_iden_perc_nk, c_geb_iden_po_nk, c_geb_koop_l, c_geb_naam_conv_l, c_geb_naam_gek_l, c_geb_naam_l, c_geb_naam_off_l, c_geb_site_fmis_l, c_gebruiker_np_rp_tmp, c_gebruikers_aant_auto_l, c_gebruikers_aant_werkpl_l, c_gebruikers_huur_l, c_gebruikers_np_rp, c_gebruikers_nvo_kbo, c_gebruikers_nvo_naam, c_gebruikers_opp_l, c_gebruikers_recht, c_gebruikers_vo_kbo, c_gebruikers_vo_naam, c_hernieuwbare_energ_type_l, c_hernieuwbare_productie_l, c_labels_l, c_labels_score_l, c_onroerend_erfgoed_l, c_onroerende_kunst_l, c_opmerkingen_l, d_waarneming_dt, n_cat_bouwjaar_l, n_geb_bouwjaar_l, n_geb_jaar_wijzig_l, n_geb_lat_l, n_geb_long_l, n_geb_nw_perc_m, n_geb_toes_date_jaar_l, n_geb_toes_date_mand_l, n_gebouw_site_fk, n_gebouw_tk, n_gebouw_type_fk, n_gebr_aant_pers_l, n_groen_stro_aang_perc_l, n_laatste_jaar_l, n_laatste_l, n_org_adv_prev_fk, n_org_dataverantwoordelijke_fk, n_org_dataverantwoordelijke_nk, n_org_geb_beh_fk, n_org_geb_beh_vsgd_fk, n_org_geb_ver_fk, n_org_lok_aanspr_fk, n_org_ver_archief_fk, n_org_ver_energie_fk, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d
+        )
+        WRAPPER (jdbc bv_bzpdwr_d__dw_d_vsgd_in_gebouw)
+    );
+

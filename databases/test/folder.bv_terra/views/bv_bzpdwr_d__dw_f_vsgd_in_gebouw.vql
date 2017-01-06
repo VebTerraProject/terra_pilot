@@ -1,0 +1,182 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdwr_d__dw_f_vsgd_in_gebouw
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdwr_d__dw_f_vsgd_in_gebouw.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdwr_d__dw_f_vsgd_in_gebouw' 
+    OUTPUTSCHEMA (
+        n_gebouw_fk = 'n_gebouw_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        d_waarneming_dt = 'd_waarneming_dt' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  NOT NULL SORTABLE,
+        n_org_dataverantwoordelijke_fk = 'n_org_dataverantwoordelijke_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  NOT NULL SORTABLE,
+        n_org_geb_beh_fk = 'n_org_geb_beh_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  NOT NULL SORTABLE,
+        n_gebouw_toestand_fk = 'n_gebouw_toestand_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        n_gebouw_type_fk = 'n_gebouw_type_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        n_gebouw_site_fk = 'n_gebouw_site_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        d_waarneming_fk = 'd_waarneming_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  NOT NULL SORTABLE,
+        n_land_fk = 'n_land_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        n_provincie_fk = 'n_provincie_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        n_arrondissement_fk = 'n_arrondissement_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        n_gemeente_fk = 'n_gemeente_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        c_gemeente_nis_nk = 'c_gemeente_nis_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        n_geb_laadpnt_auto_m = 'n_geb_laadpnt_auto_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  SORTABLE,
+        n_geb_laadpnt_fiets_m = 'n_geb_laadpnt_fiets_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  SORTABLE,
+        n_geb_park_auto_m = 'n_geb_park_auto_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_geb_park_moto_m = 'n_geb_park_moto_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_geb_park_fiets_m = 'n_geb_park_fiets_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_geb_park_pmh_m = 'n_geb_park_pmh_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  SORTABLE,
+        b_geb_circ_pmh_l = 'b_geb_circ_pmh_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_sanit_pmh_l = 'b_geb_sanit_pmh_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_drmp_loos_l = 'b_geb_drmp_loos_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        n_geb_aant_pers_m = 'n_geb_aant_pers_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_geb_aant_werkpl_m = 'n_geb_aant_werkpl_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_geb_aant_ext_m = 'n_geb_aant_ext_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  SORTABLE,
+        n_geb_aant_douch_m = 'n_geb_aant_douch_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_geb_aant_omkl_m = 'n_geb_aant_omkl_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  SORTABLE,
+        n_geb_opp_vloer_m = 'n_geb_opp_vloer_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        c_geb_opp_vloer_m = 'c_geb_opp_vloer_m' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        n_geb_opp_bov_m = 'n_geb_opp_bov_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_geb_opp_ond_m = 'n_geb_opp_ond_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_geb_opp_kant_m = 'n_geb_opp_kant_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_geb_opp_groendak_m = 'n_geb_opp_groendak_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_geb_opp_arch_m = 'n_geb_opp_arch_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_geb_nw_perc_m = 'n_geb_nw_perc_m' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        b_geb_publ_l = 'b_geb_publ_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_comp_l = 'b_geb_comp_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_verw_l = 'b_geb_verw_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_gekl_l = 'b_geb_gekl_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        b_geb_leeg_l = 'b_geb_leeg_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        n_x_coordinaten_l = 'n_x_coordinaten_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_y_coordinaten_l = 'n_y_coordinaten_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_geb_grondopp_berekend_grb_l = 'n_geb_grondopp_berekend_grb_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_oe_fk = 'n_oe_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  SORTABLE,
+        n_geb_wkpl_ind_l = 'n_geb_wkpl_ind_l' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        n_geb_wkpl_same_l = 'n_geb_wkpl_same_l' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdwr_d__dw_f_vsgd_in_gebouw I18N us_pst (
+        n_gebouw_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        d_waarneming_dt:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        n_org_dataverantwoordelijke_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        n_org_geb_beh_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        n_gebouw_toestand_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_gebouw_type_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_gebouw_site_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        d_waarneming_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        n_land_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_provincie_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_arrondissement_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_gemeente_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        c_gemeente_nis_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        n_geb_laadpnt_auto_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_laadpnt_fiets_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_park_auto_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_park_moto_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_park_fiets_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_park_pmh_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        b_geb_circ_pmh_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_sanit_pmh_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_drmp_loos_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        n_geb_aant_pers_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_aant_werkpl_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_aant_ext_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_aant_douch_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_aant_omkl_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_opp_vloer_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        c_geb_opp_vloer_m:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        n_geb_opp_bov_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_opp_ond_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_opp_kant_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_opp_groendak_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_opp_arch_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_nw_perc_m:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        b_geb_publ_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_comp_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_verw_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_gekl_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        b_geb_leeg_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        n_x_coordinaten_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_y_coordinaten_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_grondopp_berekend_grb_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_oe_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_geb_wkpl_ind_l:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        n_geb_wkpl_same_l:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdwr_d__dw_f_vsgd_in_gebouw(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD n_gebouw_fk (any) OPT ANY
+             ADD d_waarneming_dt (any) OPT ANY
+             ADD n_org_dataverantwoordelijke_fk (any) OPT ANY
+             ADD n_org_geb_beh_fk (any) OPT ANY
+             ADD n_gebouw_toestand_fk (any) OPT ANY
+             ADD n_gebouw_type_fk (any) OPT ANY
+             ADD n_gebouw_site_fk (any) OPT ANY
+             ADD d_waarneming_fk (any) OPT ANY
+             ADD n_land_fk (any) OPT ANY
+             ADD n_provincie_fk (any) OPT ANY
+             ADD n_arrondissement_fk (any) OPT ANY
+             ADD n_gemeente_fk (any) OPT ANY
+             ADD c_gemeente_nis_nk (any) OPT ANY
+             ADD n_geb_laadpnt_auto_m (any) OPT ANY
+             ADD n_geb_laadpnt_fiets_m (any) OPT ANY
+             ADD n_geb_park_auto_m (any) OPT ANY
+             ADD n_geb_park_moto_m (any) OPT ANY
+             ADD n_geb_park_fiets_m (any) OPT ANY
+             ADD n_geb_park_pmh_m (any) OPT ANY
+             ADD b_geb_circ_pmh_l (any) OPT ANY
+             ADD b_geb_sanit_pmh_l (any) OPT ANY
+             ADD b_geb_drmp_loos_l (any) OPT ANY
+             ADD n_geb_aant_pers_m (any) OPT ANY
+             ADD n_geb_aant_werkpl_m (any) OPT ANY
+             ADD n_geb_aant_ext_m (any) OPT ANY
+             ADD n_geb_aant_douch_m (any) OPT ANY
+             ADD n_geb_aant_omkl_m (any) OPT ANY
+             ADD n_geb_opp_vloer_m (any) OPT ANY
+             ADD c_geb_opp_vloer_m (any) OPT ANY
+             ADD n_geb_opp_bov_m (any) OPT ANY
+             ADD n_geb_opp_ond_m (any) OPT ANY
+             ADD n_geb_opp_kant_m (any) OPT ANY
+             ADD n_geb_opp_groendak_m (any) OPT ANY
+             ADD n_geb_opp_arch_m (any) OPT ANY
+             ADD n_geb_nw_perc_m (any) OPT ANY
+             ADD b_geb_publ_l (any) OPT ANY
+             ADD b_geb_comp_l (any) OPT ANY
+             ADD b_geb_verw_l (any) OPT ANY
+             ADD b_geb_gekl_l (any) OPT ANY
+             ADD b_geb_leeg_l (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+             ADD n_x_coordinaten_l (any) OPT ANY
+             ADD n_y_coordinaten_l (any) OPT ANY
+             ADD n_geb_grondopp_berekend_grb_l (any) OPT ANY
+             ADD n_oe_fk (any) OPT ANY
+             ADD n_geb_wkpl_ind_l (any) OPT ANY
+             ADD n_geb_wkpl_same_l (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, b_geb_circ_pmh_l, b_geb_comp_l, b_geb_drmp_loos_l, b_geb_gekl_l, b_geb_leeg_l, b_geb_publ_l, b_geb_sanit_pmh_l, b_geb_verw_l, c_geb_opp_vloer_m, c_gemeente_nis_nk, d_waarneming_dt, d_waarneming_fk, n_arrondissement_fk, n_geb_aant_douch_m, n_geb_aant_ext_m, n_geb_aant_omkl_m, n_geb_aant_pers_m, n_geb_aant_werkpl_m, n_geb_grondopp_berekend_grb_l, n_geb_laadpnt_auto_m, n_geb_laadpnt_fiets_m, n_geb_nw_perc_m, n_geb_opp_arch_m, n_geb_opp_bov_m, n_geb_opp_groendak_m, n_geb_opp_kant_m, n_geb_opp_ond_m, n_geb_opp_vloer_m, n_geb_park_auto_m, n_geb_park_fiets_m, n_geb_park_moto_m, n_geb_park_pmh_m, n_geb_wkpl_ind_l, n_geb_wkpl_same_l, n_gebouw_fk, n_gebouw_site_fk, n_gebouw_toestand_fk, n_gebouw_type_fk, n_gemeente_fk, n_land_fk, n_oe_fk, n_org_dataverantwoordelijke_fk, n_org_geb_beh_fk, n_provincie_fk, n_x_coordinaten_l, n_y_coordinaten_l, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d
+        )
+        WRAPPER (jdbc bv_bzpdwr_d__dw_f_vsgd_in_gebouw)
+    );
+

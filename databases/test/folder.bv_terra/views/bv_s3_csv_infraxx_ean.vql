@@ -1,0 +1,95 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_s3_csv_infraxx_ean
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_s3_csv_infraxx_ean.CATALOGNAME}'
+    RELATIONNAME='bv_s3_csv_infraxx_ean' 
+    OUTPUTSCHEMA (
+        ean = 'ean' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        type = 'type' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        richting = 'richting' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        meetmethode = 'meetmethode' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        gos = 'gos' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        status = 'status' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        categorie_netgebruiker = 'categorie_netgebruiker' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        voltage_niveau = 'voltage_niveau' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        decentrale_productie = 'decentrale_productie' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        gis_latitude_y = 'gis_latitude_y' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        gis_longitude_x = 'gis_longitude_x' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        straat = 'straat' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        huisnummer = 'huisnummer' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        busnummer = 'busnummer' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        postcode = 'postcode' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        gemeente = 'gemeente' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        omschrijving = 'omschrijving' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        slp = 'slp' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        tarieftype = 'tarieftype' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ijzerverliezen = 'ijzerverliezen' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        koperverliezen = 'koperverliezen' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        schaarsteschijf = 'schaarsteschijf' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        actiefvan_0 = 'actiefvan_0' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        actieftot_0 = 'actieftot_0' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_s3_csv_infraxx_ean I18N us_pst (
+        ean:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        type:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        richting:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        meetmethode:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        gos:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        status:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        categorie_netgebruiker:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        voltage_niveau:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        decentrale_productie:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        gis_latitude_y:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        gis_longitude_x:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        straat:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        huisnummer:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        busnummer:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        postcode:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        gemeente:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        omschrijving:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        slp:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        tarieftype:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ijzerverliezen:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        koperverliezen:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        schaarsteschijf:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        actiefvan_0:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        actieftot_0:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_s3_csv_infraxx_ean(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD ean (any) OPT ANY
+             ADD type (any) OPT ANY
+             ADD richting (any) OPT ANY
+             ADD meetmethode (any) OPT ANY
+             ADD gos (any) OPT ANY
+             ADD status (any) OPT ANY
+             ADD categorie_netgebruiker (any) OPT ANY
+             ADD voltage_niveau (any) OPT ANY
+             ADD decentrale_productie (any) OPT ANY
+             ADD gis_latitude_y (any) OPT ANY
+             ADD gis_longitude_x (any) OPT ANY
+             ADD straat (any) OPT ANY
+             ADD huisnummer (any) OPT ANY
+             ADD busnummer (any) OPT ANY
+             ADD postcode (any) OPT ANY
+             ADD gemeente (any) OPT ANY
+             ADD omschrijving (any) OPT ANY
+             ADD slp (any) OPT ANY
+             ADD tarieftype (any) OPT ANY
+             ADD ijzerverliezen (any) OPT ANY
+             ADD koperverliezen (any) OPT ANY
+             ADD schaarsteschijf (any) OPT ANY
+             ADD actiefvan_0 (any) OPT ANY
+             ADD actieftot_0 (any) OPT ANY
+        )
+        OUTPUTLIST (actieftot_0, actiefvan_0, busnummer, categorie_netgebruiker, decentrale_productie, ean, gemeente, gis_latitude_y, gis_longitude_x, gos, huisnummer, ijzerverliezen, koperverliezen, meetmethode, omschrijving, postcode, richting, schaarsteschijf, slp, status, straat, tarieftype, type, voltage_niveau
+        )
+        WRAPPER (jdbc bv_s3_csv_infraxx_ean)
+    );
+

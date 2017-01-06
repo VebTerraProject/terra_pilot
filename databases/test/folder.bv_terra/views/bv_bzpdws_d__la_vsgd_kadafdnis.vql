@@ -1,0 +1,65 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdws_d__la_vsgd_kadafdnis
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdws_d__la_vsgd_kadafdnis.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdws_d__la_vsgd_kadafdnis' 
+    OUTPUTSCHEMA (
+        s_arrondissement_code_l = 's_arrondissement_code_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        s_afdeling_code_l = 's_afdeling_code_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        s_codeterval_l = 's_codeterval_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        s_nis_code_l = 's_nis_code_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        s_gemeente_l = 's_gemeente_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        s_afdeling_l = 's_afdeling_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        s_arrondissement_l = 's_arrondissement_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        s_provincie_code_l = 's_provincie_code_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        s_provincie_l = 's_provincie_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        s_regio_code_l = 's_regio_code_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        s_regio_fr_l = 's_regio_fr_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        s_regio_nl_l = 's_regio_nl_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        s_postcode_l = 's_postcode_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        s_taal_l = 's_taal_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdws_d__la_vsgd_kadafdnis I18N us_pst (
+        s_arrondissement_code_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        s_afdeling_code_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        s_codeterval_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        s_nis_code_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        s_gemeente_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        s_afdeling_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        s_arrondissement_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        s_provincie_code_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        s_provincie_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        s_regio_code_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        s_regio_fr_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        s_regio_nl_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        s_postcode_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        s_taal_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdws_d__la_vsgd_kadafdnis(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD s_arrondissement_code_l (any) OPT ANY
+             ADD s_afdeling_code_l (any) OPT ANY
+             ADD s_codeterval_l (any) OPT ANY
+             ADD s_nis_code_l (any) OPT ANY
+             ADD s_gemeente_l (any) OPT ANY
+             ADD s_afdeling_l (any) OPT ANY
+             ADD s_arrondissement_l (any) OPT ANY
+             ADD s_provincie_code_l (any) OPT ANY
+             ADD s_provincie_l (any) OPT ANY
+             ADD s_regio_code_l (any) OPT ANY
+             ADD s_regio_fr_l (any) OPT ANY
+             ADD s_regio_nl_l (any) OPT ANY
+             ADD s_postcode_l (any) OPT ANY
+             ADD s_taal_l (any) OPT ANY
+        )
+        OUTPUTLIST (s_afdeling_code_l, s_afdeling_l, s_arrondissement_code_l, s_arrondissement_l, s_codeterval_l, s_gemeente_l, s_nis_code_l, s_postcode_l, s_provincie_code_l, s_provincie_l, s_regio_code_l, s_regio_fr_l, s_regio_nl_l, s_taal_l
+        )
+        WRAPPER (jdbc bv_bzpdws_d__la_vsgd_kadafdnis)
+    );
+

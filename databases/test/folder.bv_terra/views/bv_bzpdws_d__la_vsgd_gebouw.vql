@@ -1,0 +1,290 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdws_d__la_vsgd_gebouw
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdws_d__la_vsgd_gebouw.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdws_d__la_vsgd_gebouw' 
+    OUTPUTSCHEMA (
+        geb_id = 'geb_id' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  NOT NULL SORTABLE,
+        geb_arch = 'geb_arch' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        geb_vim = 'geb_vim' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        geb_iden = 'geb_iden' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  SORTABLE,
+        geb_naam = 'geb_naam' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        geb_site = 'geb_site' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        geb_kad_capa = 'geb_kad_capa' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        geb_kad_perc = 'geb_kad_perc' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        geb_kad_po = 'geb_kad_po' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        geb_land = 'geb_land' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  SORTABLE,
+        geb_str = 'geb_str' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        geb_nr = 'geb_nr' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        geb_bus = 'geb_bus' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        geb_post = 'geb_post' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        geb_gem = 'geb_gem' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        geb_pos = 'geb_pos' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  SORTABLE,
+        geb_opp_bov = 'geb_opp_bov' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_opp_ond = 'geb_opp_ond' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_aant_pers = 'geb_aant_pers' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_park_hand = 'geb_park_hand' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_park_auto = 'geb_park_auto' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_park_moto = 'geb_park_moto' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_park_fiet = 'geb_park_fiet' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_opl_auto = 'geb_opl_auto' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_opl_fiet = 'geb_opl_fiet' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_douc = 'geb_douc' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_omkl = 'geb_omkl' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_leeg = 'geb_leeg' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_type = 'geb_type' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_adr_code = 'geb_adr_code' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_ref = 'geb_ref' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_bzgr = 'geb_bzgr' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  SORTABLE,
+        geb_wkpl = 'geb_wkpl' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_bwjr = 'geb_bwjr' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_eig_vo = 'geb_eig_vo' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_jaar_wijz = 'geb_jaar_wijz' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_toes = 'geb_toes' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        geb_publ = 'geb_publ' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        geb_publ_toeg = 'geb_publ_toeg' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        geb_arch_ruim = 'geb_arch_ruim' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_comp_zaal = 'geb_comp_zaal' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        geb_huur = 'geb_huur' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_vest_nr = 'geb_vest_nr' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  SORTABLE,
+        geb_opp_kant = 'geb_opp_kant' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_vlro = 'geb_vlro' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_verw = 'geb_verw' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        geb_gekl = 'geb_gekl' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        geb_nw_perc = 'geb_nw_perc' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_geo_oid = 'geb_geo_oid' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  SORTABLE,
+        geb_geo_link = 'geb_geo_link' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        geb_geo_corr = 'geb_geo_corr' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        geb_geo_corr_nr = 'geb_geo_corr_nr' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  SORTABLE,
+        geb_groen_dak = 'geb_groen_dak' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_drmp_loos = 'geb_drmp_loos' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        geb_circ_hand = 'geb_circ_hand' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        geb_aang_san = 'geb_aang_san' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        geb_ins_date = 'geb_ins_date' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        geb_ins_user = 'geb_ins_user' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        geb_upd_date = 'geb_upd_date' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        geb_upd_user = 'geb_upd_user' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        geb_ext = 'geb_ext' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_naam_conv = 'geb_naam_conv' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        geb_naam_off = 'geb_naam_off' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        geb_naam_gek = 'geb_naam_gek' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        geb_site_fmis = 'geb_site_fmis' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        geb_vlro_ngek = 'geb_vlro_ngek' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        geb_fmis_site_naam = 'geb_fmis_site_naam' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        geb_mede_eig = 'geb_mede_eig' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        geb_eig_bezw = 'geb_eig_bezw' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='200')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE,
+        x_coordinaten = 'x_coordinaten' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        y_coordinaten = 'y_coordinaten' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        geb_grondopp_berekend_grb = 'geb_grondopp_berekend_grb' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        geb_gas = 'geb_gas' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        geb_elek = 'geb_elek' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        geb_stok = 'geb_stok' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        geb_watr = 'geb_watr' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        geb_koop = 'geb_koop' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        geb_toes_date_mand = 'geb_toes_date_mand' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_toes_date_jaar = 'geb_toes_date_jaar' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        gebr_aant_pers = 'gebr_aant_pers' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_wkpl_ind = 'geb_wkpl_ind' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE,
+        geb_wkpl_same = 'geb_wkpl_same' :'java.lang.Double' (OPT) (sourcetyperadix='10', sourcetypename='DOUBLE', sourcetypeid='8', sourcetypedecimals='17', sourcetypesize='17')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdws_d__la_vsgd_gebouw I18N us_pst (
+        geb_id:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_arch:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        geb_vim:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        geb_iden:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        geb_naam:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        geb_site:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        geb_kad_capa:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        geb_kad_perc:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        geb_kad_po:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        geb_land:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        geb_str:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        geb_nr:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        geb_bus:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        geb_post:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        geb_gem:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        geb_pos:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        geb_opp_bov:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_opp_ond:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_aant_pers:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_park_hand:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_park_auto:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_park_moto:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_park_fiet:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_opl_auto:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_opl_fiet:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_douc:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_omkl:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_leeg:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_type:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_adr_code:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_ref:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_bzgr:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        geb_wkpl:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_bwjr:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_eig_vo:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_jaar_wijz:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_toes:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        geb_publ:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        geb_publ_toeg:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        geb_arch_ruim:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_comp_zaal:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        geb_huur:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_vest_nr:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        geb_opp_kant:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_vlro:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_verw:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        geb_gekl:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        geb_nw_perc:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_geo_oid:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        geb_geo_link:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        geb_geo_corr:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        geb_geo_corr_nr:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        geb_groen_dak:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_drmp_loos:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        geb_circ_hand:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        geb_aang_san:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        geb_ins_date:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        geb_ins_user:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        geb_upd_date:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        geb_upd_user:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        geb_ext:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_naam_conv:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        geb_naam_off:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        geb_naam_gek:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        geb_site_fmis:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        geb_vlro_ngek:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        geb_fmis_site_naam:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        geb_mede_eig:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        geb_eig_bezw:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '200', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2'), 
+        x_coordinaten:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        y_coordinaten:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        geb_grondopp_berekend_grb:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        geb_gas:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        geb_elek:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        geb_stok:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        geb_watr:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        geb_koop:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        geb_toes_date_mand:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_toes_date_jaar:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        gebr_aant_pers:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_wkpl_ind:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8'), 
+        geb_wkpl_same:double (sourcetyperadix = '10', sourcetypedecimals = '17', sourcetypesize = '17', sourcetypeid = '8')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdws_d__la_vsgd_gebouw(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD geb_id (any) OPT ANY
+             ADD geb_arch (any) OPT ANY
+             ADD geb_vim (any) OPT ANY
+             ADD geb_iden (any) OPT ANY
+             ADD geb_naam (any) OPT ANY
+             ADD geb_site (any) OPT ANY
+             ADD geb_kad_capa (any) OPT ANY
+             ADD geb_kad_perc (any) OPT ANY
+             ADD geb_kad_po (any) OPT ANY
+             ADD geb_land (any) OPT ANY
+             ADD geb_str (any) OPT ANY
+             ADD geb_nr (any) OPT ANY
+             ADD geb_bus (any) OPT ANY
+             ADD geb_post (any) OPT ANY
+             ADD geb_gem (any) OPT ANY
+             ADD geb_pos (any) OPT ANY
+             ADD geb_opp_bov (any) OPT ANY
+             ADD geb_opp_ond (any) OPT ANY
+             ADD geb_aant_pers (any) OPT ANY
+             ADD geb_park_hand (any) OPT ANY
+             ADD geb_park_auto (any) OPT ANY
+             ADD geb_park_moto (any) OPT ANY
+             ADD geb_park_fiet (any) OPT ANY
+             ADD geb_opl_auto (any) OPT ANY
+             ADD geb_opl_fiet (any) OPT ANY
+             ADD geb_douc (any) OPT ANY
+             ADD geb_omkl (any) OPT ANY
+             ADD geb_leeg (any) OPT ANY
+             ADD geb_type (any) OPT ANY
+             ADD geb_adr_code (any) OPT ANY
+             ADD geb_ref (any) OPT ANY
+             ADD geb_bzgr (any) OPT ANY
+             ADD geb_wkpl (any) OPT ANY
+             ADD geb_bwjr (any) OPT ANY
+             ADD geb_eig_vo (any) OPT ANY
+             ADD geb_jaar_wijz (any) OPT ANY
+             ADD geb_toes (any) OPT ANY
+             ADD geb_publ (any) OPT ANY
+             ADD geb_publ_toeg (any) OPT ANY
+             ADD geb_arch_ruim (any) OPT ANY
+             ADD geb_comp_zaal (any) OPT ANY
+             ADD geb_huur (any) OPT ANY
+             ADD geb_vest_nr (any) OPT ANY
+             ADD geb_opp_kant (any) OPT ANY
+             ADD geb_vlro (any) OPT ANY
+             ADD geb_verw (any) OPT ANY
+             ADD geb_gekl (any) OPT ANY
+             ADD geb_nw_perc (any) OPT ANY
+             ADD geb_geo_oid (any) OPT ANY
+             ADD geb_geo_link (any) OPT ANY
+             ADD geb_geo_corr (any) OPT ANY
+             ADD geb_geo_corr_nr (any) OPT ANY
+             ADD geb_groen_dak (any) OPT ANY
+             ADD geb_drmp_loos (any) OPT ANY
+             ADD geb_circ_hand (any) OPT ANY
+             ADD geb_aang_san (any) OPT ANY
+             ADD geb_ins_date (any) OPT ANY
+             ADD geb_ins_user (any) OPT ANY
+             ADD geb_upd_date (any) OPT ANY
+             ADD geb_upd_user (any) OPT ANY
+             ADD geb_ext (any) OPT ANY
+             ADD geb_naam_conv (any) OPT ANY
+             ADD geb_naam_off (any) OPT ANY
+             ADD geb_naam_gek (any) OPT ANY
+             ADD geb_site_fmis (any) OPT ANY
+             ADD geb_vlro_ngek (any) OPT ANY
+             ADD geb_fmis_site_naam (any) OPT ANY
+             ADD geb_mede_eig (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD geb_eig_bezw (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+             ADD x_coordinaten (any) OPT ANY
+             ADD y_coordinaten (any) OPT ANY
+             ADD geb_grondopp_berekend_grb (any) OPT ANY
+             ADD geb_gas (any) OPT ANY
+             ADD geb_elek (any) OPT ANY
+             ADD geb_stok (any) OPT ANY
+             ADD geb_watr (any) OPT ANY
+             ADD geb_koop (any) OPT ANY
+             ADD geb_toes_date_mand (any) OPT ANY
+             ADD geb_toes_date_jaar (any) OPT ANY
+             ADD gebr_aant_pers (any) OPT ANY
+             ADD geb_wkpl_ind (any) OPT ANY
+             ADD geb_wkpl_same (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, geb_aang_san, geb_aant_pers, geb_adr_code, geb_arch, geb_arch_ruim, geb_bus, geb_bwjr, geb_bzgr, geb_circ_hand, geb_comp_zaal, geb_douc, geb_drmp_loos, geb_eig_bezw, geb_eig_vo, geb_elek, geb_ext, geb_fmis_site_naam, geb_gas, geb_gekl, geb_gem, geb_geo_corr, geb_geo_corr_nr, geb_geo_link, geb_geo_oid, geb_groen_dak, geb_grondopp_berekend_grb, geb_huur, geb_id, geb_iden, geb_ins_date, geb_ins_user, geb_jaar_wijz, geb_kad_capa, geb_kad_perc, geb_kad_po, geb_koop, geb_land, geb_leeg, geb_mede_eig, geb_naam, geb_naam_conv, geb_naam_gek, geb_naam_off, geb_nr, geb_nw_perc, geb_omkl, geb_opl_auto, geb_opl_fiet, geb_opp_bov, geb_opp_kant, geb_opp_ond, geb_park_auto, geb_park_fiet, geb_park_hand, geb_park_moto, geb_pos, geb_post, geb_publ, geb_publ_toeg, geb_ref, geb_site, geb_site_fmis, geb_stok, geb_str, geb_toes, geb_toes_date_jaar, geb_toes_date_mand, geb_type, geb_upd_date, geb_upd_user, geb_verw, geb_vest_nr, geb_vim, geb_vlro, geb_vlro_ngek, geb_watr, geb_wkpl, geb_wkpl_ind, geb_wkpl_same, gebr_aant_pers, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d, x_coordinaten, y_coordinaten
+        )
+        WRAPPER (jdbc bv_bzpdws_d__la_vsgd_gebouw)
+    );
+

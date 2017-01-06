@@ -1,0 +1,27 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC test_out_short
+    FOLDER = '/2 - base views/amz_redshift_terdwh'
+    DATASOURCENAME=ds_ar_terdwh
+    CATALOGNAME = '${databases.test.folder.2 - base views.folder.amz_redshift_terdwh.views.jdbc.test_out_short.CATALOGNAME}'
+    SCHEMANAME = '${databases.test.folder.2 - base views.folder.amz_redshift_terdwh.views.jdbc.test_out_short.SCHEMANAME}'
+    RELATIONNAME='test_out_short' 
+    OUTPUTSCHEMA (
+        col1 = 'col1' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_terdwh__test_out_short I18N us_pst (
+        col1:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12')
+    )
+    FOLDER = '/2 - base views/amz_redshift_terdwh'
+    CACHE FULL
+    TIMETOLIVEINCACHE NOEXPIRE
+    ADD SEARCHMETHOD test_out_short(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD col1 (any) OPT ANY
+        )
+        OUTPUTLIST (col1
+        )
+        WRAPPER (jdbc test_out_short)
+    );
+

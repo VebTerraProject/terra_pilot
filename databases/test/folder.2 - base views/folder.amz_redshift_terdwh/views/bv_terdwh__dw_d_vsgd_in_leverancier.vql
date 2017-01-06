@@ -1,0 +1,57 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC dw_d_vsgd_in_leverancier_9701
+    FOLDER = '/1 - data sources'
+    DATASOURCENAME=ds_ar_terdwh
+    CATALOGNAME = '${databases.test.folder.1 - data sources.views.jdbc.dw_d_vsgd_in_leverancier_9701.CATALOGNAME}'
+    SCHEMANAME = '${databases.test.folder.1 - data sources.views.jdbc.dw_d_vsgd_in_leverancier_9701.SCHEMANAME}'
+    RELATIONNAME='dw_d_vsgd_in_leverancier' 
+    OUTPUTSCHEMA (
+        n_leverancier_tk = 'n_leverancier_tk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='numeric', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        c_leverancier_nk = 'c_leverancier_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  NOT NULL SORTABLE,
+        c_lev_naam_l = 'c_lev_naam_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  SORTABLE,
+        c_lev_gln_l = 'c_lev_gln_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Timestamp' (OPT) (sourcetyperadix='10', sourcetypename='timestamp', sourcetypeid='93', sourcetypedecimals='6', sourcetypesize='29')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Timestamp' (OPT) (sourcetyperadix='10', sourcetypename='timestamp', sourcetypeid='93', sourcetypedecimals='6', sourcetypesize='29')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Timestamp' (OPT) (sourcetyperadix='10', sourcetypename='timestamp', sourcetypeid='93', sourcetypedecimals='6', sourcetypesize='29')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='numeric', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='19')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_terdwh__dw_d_vsgd_in_leverancier I18N us_pst (
+        n_leverancier_tk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        c_leverancier_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_lev_naam_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        c_lev_gln_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '6', sourcetypesize = '29', sourcetypeid = '93'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '6', sourcetypesize = '29', sourcetypeid = '93'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '6', sourcetypesize = '29', sourcetypeid = '93'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '2')
+    )
+    FOLDER = '/2 - base views/amz_redshift_terdwh'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD dw_d_vsgd_in_leverancier(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD n_leverancier_tk (any) OPT ANY
+             ADD c_leverancier_nk (any) OPT ANY
+             ADD c_lev_naam_l (any) OPT ANY
+             ADD c_lev_gln_l (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, c_lev_gln_l, c_lev_naam_l, c_leverancier_nk, n_leverancier_tk, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d
+        )
+        WRAPPER (jdbc dw_d_vsgd_in_leverancier_9701)
+    );
+

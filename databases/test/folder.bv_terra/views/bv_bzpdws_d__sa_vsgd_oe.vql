@@ -1,0 +1,83 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdws_d__sa_vsgd_oe
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdws_d__sa_vsgd_oe.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdws_d__sa_vsgd_oe' 
+    OUTPUTSCHEMA (
+        c_capakey_l = 'c_capakey_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  NOT NULL SORTABLE,
+        n_perc_fk = 'n_perc_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        c_identificatienummer_oe_nk = 'c_identificatienummer_oe_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  NOT NULL SORTABLE,
+        c_naam_oe_l = 'c_naam_oe_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='254')  NOT NULL SORTABLE,
+        c_adres_l = 'c_adres_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  SORTABLE,
+        n_oe_fk = 'n_oe_fk' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='0', sourcetypesize='38')  NOT NULL SORTABLE,
+        c_perc_capakey_nk = 'c_perc_capakey_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  NOT NULL SORTABLE,
+        c_perc_percid_nk = 'c_perc_percid_nk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='21')  NOT NULL SORTABLE,
+        c_perc_jaar_l = 'c_perc_jaar_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='4')  SORTABLE,
+        n_opp_perceel_vdb_f = 'n_opp_perceel_vdb_f' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_opp_erfgoedobject_f = 'n_opp_erfgoedobject_f' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_pct_opp_perceel_vdb_f = 'n_pct_opp_perceel_vdb_f' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        n_pct_opp_erfgoedobject_f = 'n_pct_opp_erfgoedobject_f' :'java.math.BigDecimal' (OPT) (sourcetyperadix='10', sourcetypename='NUMERIC', sourcetypeid='2', sourcetypedecimals='10', sourcetypesize='38')  SORTABLE,
+        c_bron_geometrie_l = 'c_bron_geometrie_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  NOT NULL SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='80')  NOT NULL SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  NOT NULL SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  NOT NULL SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  NOT NULL SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='INTEGER', sourcetypeid='4', sourcetypedecimals='0', sourcetypesize='10')  NOT NULL SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdws_d__sa_vsgd_oe I18N us_pst (
+        c_capakey_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        n_perc_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        c_identificatienummer_oe_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        c_naam_oe_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '254', sourcetypeid = '12'), 
+        c_adres_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        n_oe_fk:decimal (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '38', sourcetypeid = '2'), 
+        c_perc_capakey_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        c_perc_percid_nk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '21', sourcetypeid = '12'), 
+        c_perc_jaar_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '4', sourcetypeid = '12'), 
+        n_opp_perceel_vdb_f:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_opp_erfgoedobject_f:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_pct_opp_perceel_vdb_f:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        n_pct_opp_erfgoedobject_f:decimal (sourcetyperadix = '10', sourcetypedecimals = '10', sourcetypesize = '38', sourcetypeid = '2'), 
+        c_bron_geometrie_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '80', sourcetypeid = '12'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '4')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdws_d__sa_vsgd_oe(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD c_capakey_l (any) OPT ANY
+             ADD n_perc_fk (any) OPT ANY
+             ADD c_identificatienummer_oe_nk (any) OPT ANY
+             ADD c_naam_oe_l (any) OPT ANY
+             ADD c_adres_l (any) OPT ANY
+             ADD n_oe_fk (any) OPT ANY
+             ADD c_perc_capakey_nk (any) OPT ANY
+             ADD c_perc_percid_nk (any) OPT ANY
+             ADD c_perc_jaar_l (any) OPT ANY
+             ADD n_opp_perceel_vdb_f (any) OPT ANY
+             ADD n_opp_erfgoedobject_f (any) OPT ANY
+             ADD n_pct_opp_perceel_vdb_f (any) OPT ANY
+             ADD n_pct_opp_erfgoedobject_f (any) OPT ANY
+             ADD c_bron_geometrie_l (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, c_adres_l, c_bron_geometrie_l, c_capakey_l, c_identificatienummer_oe_nk, c_naam_oe_l, c_perc_capakey_nk, c_perc_jaar_l, c_perc_percid_nk, n_oe_fk, n_opp_erfgoedobject_f, n_opp_perceel_vdb_f, n_pct_opp_erfgoedobject_f, n_pct_opp_perceel_vdb_f, n_perc_fk, s_beheerder_l, s_bron_l, s_insert_d, s_load_id_l, s_update_d
+        )
+        WRAPPER (jdbc bv_bzpdws_d__sa_vsgd_oe)
+    );
+

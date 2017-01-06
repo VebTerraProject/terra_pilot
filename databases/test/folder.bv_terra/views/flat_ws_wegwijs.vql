@@ -1,0 +1,59 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC flat_ws_wegwijs
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.flat_ws_wegwijs.CATALOGNAME}'
+    RELATIONNAME='flat_ws_wegwijs' 
+    OUTPUTSCHEMA (
+        id = 'id' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ovonumber = 'ovonumber' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        name = 'name' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        shortname = 'shortname' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        parentorganisation = 'parentorganisation' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        parentorganisationid = 'parentorganisationid' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        formalframeworkid = 'formalframeworkid' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        organisationclassificationid = 'organisationclassificationid' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        organisationclassificationtypeid = 'organisationclassificationtypeid' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        description = 'description' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        mainbuildingid = 'mainbuildingid' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        mainbuildingname = 'mainbuildingname' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE flat_ws_wegwijs I18N us_pst (
+        id:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ovonumber:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        name:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        shortname:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        parentorganisation:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        parentorganisationid:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        formalframeworkid:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        organisationclassificationid:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        organisationclassificationtypeid:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        description:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        mainbuildingid:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        mainbuildingname:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD flat_ws_wegwijs(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD id (any) OPT ANY
+             ADD ovonumber (any) OPT ANY
+             ADD name (any) OPT ANY
+             ADD shortname (any) OPT ANY
+             ADD parentorganisation (any) OPT ANY
+             ADD parentorganisationid (any) OPT ANY
+             ADD formalframeworkid (any) OPT ANY
+             ADD organisationclassificationid (any) OPT ANY
+             ADD organisationclassificationtypeid (any) OPT ANY
+             ADD description (any) OPT ANY
+             ADD mainbuildingid (any) OPT ANY
+             ADD mainbuildingname (any) OPT ANY
+        )
+        OUTPUTLIST (description, formalframeworkid, id, mainbuildingid, mainbuildingname, name, organisationclassificationid, organisationclassificationtypeid, ovonumber, parentorganisation, parentorganisationid, shortname
+        )
+        WRAPPER (jdbc flat_ws_wegwijs)
+    );
+

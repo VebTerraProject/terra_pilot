@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW fv_consumption_qualities_hist FOLDER = '/4 - final_views' AS SELECT dv_01_consumption_qualities_hist.id AS id, dv_01_consumption_qualities_hist.code AS code, dv_01_consumption_qualities_hist.description AS description, dv_01_consumption_qualities_hist.created_by AS created_by, dv_01_consumption_qualities_hist.last_updated_by AS last_updated_by, dv_01_consumption_qualities_hist.created AS created, dv_01_consumption_qualities_hist.last_updated AS last_updated FROM dv_01_consumption_qualities_hist;
+
+ALTER VIEW fv_consumption_qualities_hist
+ LAYOUT (dv_01_consumption_qualities_hist = [20, 20, 246, 166]);
+

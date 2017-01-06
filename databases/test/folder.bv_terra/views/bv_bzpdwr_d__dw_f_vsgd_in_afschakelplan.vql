@@ -1,0 +1,44 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdwr_d__dw_f_vsgd_in_afschakelplan
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdwr_d__dw_f_vsgd_in_afschakelplan.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdwr_d__dw_f_vsgd_in_afschakelplan' 
+    OUTPUTSCHEMA (
+        c_gemeente_l = 'c_gemeente_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  SORTABLE,
+        c_postcode_l = 'c_postcode_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        c_straat_l = 'c_straat_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        c_afschakelzone_l = 'c_afschakelzone_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  SORTABLE,
+        c_type_l = 'c_type_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        c_netbeheerder_l = 'c_netbeheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        d_creatiedatum_l = 'd_creatiedatum_l' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdwr_d__dw_f_vsgd_in_afschakelplan I18N us_pst (
+        c_gemeente_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        c_postcode_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        c_straat_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        c_afschakelzone_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        c_type_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        c_netbeheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        d_creatiedatum_l:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdwr_d__dw_f_vsgd_in_afschakelplan(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD c_gemeente_l (any) OPT ANY
+             ADD c_postcode_l (any) OPT ANY
+             ADD c_straat_l (any) OPT ANY
+             ADD c_afschakelzone_l (any) OPT ANY
+             ADD c_type_l (any) OPT ANY
+             ADD c_netbeheerder_l (any) OPT ANY
+             ADD d_creatiedatum_l (any) OPT ANY
+        )
+        OUTPUTLIST (c_afschakelzone_l, c_gemeente_l, c_netbeheerder_l, c_postcode_l, c_straat_l, c_type_l, d_creatiedatum_l
+        )
+        WRAPPER (jdbc bv_bzpdwr_d__dw_f_vsgd_in_afschakelplan)
+    );
+

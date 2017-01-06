@@ -1,0 +1,65 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_s3_csv_resultaat_terra_2013
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_s3_csv_resultaat_terra_2013.CATALOGNAME}'
+    RELATIONNAME='bv_s3_csv_resultaat_terra_2013' 
+    OUTPUTSCHEMA (
+        ean = 'ean' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ean_jaar_verbruik = 'ean_jaar_verbruik' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ean_jaar_dag_verbruik = 'ean_jaar_dag_verbruik' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ean_nachtverbruik = 'ean_nachtverbruik' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ean_slp = 'ean_slp' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ean_type = 'ean_type' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ean_richting = 'ean_richting' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ean_gln_leverancier = 'ean_gln_leverancier' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ean_meetmethode = 'ean_meetmethode' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ean_gis_latitude = 'ean_gis_latitude' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ean_gis_longitude = 'ean_gis_longitude' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ean_schaarste_schijf = 'ean_schaarste_schijf' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ean_b98 = 'ean_b98' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ean_gos = 'ean_gos' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_s3_csv_resultaat_terra_2013 I18N us_pst (
+        ean:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ean_jaar_verbruik:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ean_jaar_dag_verbruik:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ean_nachtverbruik:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ean_slp:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ean_type:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ean_richting:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ean_gln_leverancier:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ean_meetmethode:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ean_gis_latitude:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ean_gis_longitude:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ean_schaarste_schijf:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ean_b98:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ean_gos:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_s3_csv_resultaat_terra_2013(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD ean (any) OPT ANY
+             ADD ean_jaar_verbruik (any) OPT ANY
+             ADD ean_jaar_dag_verbruik (any) OPT ANY
+             ADD ean_nachtverbruik (any) OPT ANY
+             ADD ean_slp (any) OPT ANY
+             ADD ean_type (any) OPT ANY
+             ADD ean_richting (any) OPT ANY
+             ADD ean_gln_leverancier (any) OPT ANY
+             ADD ean_meetmethode (any) OPT ANY
+             ADD ean_gis_latitude (any) OPT ANY
+             ADD ean_gis_longitude (any) OPT ANY
+             ADD ean_schaarste_schijf (any) OPT ANY
+             ADD ean_b98 (any) OPT ANY
+             ADD ean_gos (any) OPT ANY
+        )
+        OUTPUTLIST (ean, ean_b98, ean_gis_latitude, ean_gis_longitude, ean_gln_leverancier, ean_gos, ean_jaar_dag_verbruik, ean_jaar_verbruik, ean_meetmethode, ean_nachtverbruik, ean_richting, ean_schaarste_schijf, ean_slp, ean_type
+        )
+        WRAPPER (jdbc bv_s3_csv_resultaat_terra_2013)
+    );
+

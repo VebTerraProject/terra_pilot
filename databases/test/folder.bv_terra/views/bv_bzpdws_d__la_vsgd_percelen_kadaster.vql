@@ -1,0 +1,140 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdws_d__la_vsgd_percelen_kadaster
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdws_d__la_vsgd_percelen_kadaster.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdws_d__la_vsgd_percelen_kadaster' 
+    OUTPUTSCHEMA (
+        perc_kad_rr_btw = 'perc_kad_rr_btw' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        perc_kad_gemeente = 'perc_kad_gemeente' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        perc_kad_ligging1 = 'perc_kad_ligging1' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        perc_kad_ligging2 = 'perc_kad_ligging2' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='50')  SORTABLE,
+        perc_kad_capakey = 'perc_kad_capakey' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        perc_kad_kadinfo = 'perc_kad_kadinfo' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        perc_kad_aard = 'perc_kad_aard' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        perc_kad_opp = 'perc_kad_opp' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        perc_kad_ki = 'perc_kad_ki' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        perc_kad_eigcode = 'perc_kad_eigcode' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='20')  SORTABLE,
+        perc_kad_rechten = 'perc_kad_rechten' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        perc_kad_eignaam = 'perc_kad_eignaam' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  SORTABLE,
+        perc_kad_eigpc = 'perc_kad_eigpc' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        perc_kad_eiggem = 'perc_kad_eiggem' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  SORTABLE,
+        perc_kad_eigstraat = 'perc_kad_eigstraat' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='100')  SORTABLE,
+        perc_kad_eighsnr = 'perc_kad_eighsnr' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        perc_kad_catgebouw = 'perc_kad_catgebouw' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        perc_kad_nbrgevels = 'perc_kad_nbrgevels' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        perc_kad_nbrverd = 'perc_kad_nbrverd' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        perc_kad_bewdakverd = 'perc_kad_bewdakverd' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        perc_kad_bouwjaar = 'perc_kad_bouwjaar' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        perc_kad_fyswyzjaar = 'perc_kad_fyswyzjaar' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        perc_kad_constrkwal = 'perc_kad_constrkwal' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        perc_kad_nbrgarages = 'perc_kad_nbrgarages' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        perc_kad_centrverw = 'perc_kad_centrverw' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        perc_kad_nbrbadkmrs = 'perc_kad_nbrbadkmrs' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        perc_kad_nbrwoonglg = 'perc_kad_nbrwoonglg' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        perc_kad_nbrwoonplt = 'perc_kad_nbrwoonplt' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        perc_kad_bebopp = 'perc_kad_bebopp' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        perc_kad_nutopp = 'perc_kad_nutopp' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='5')  SORTABLE,
+        perc_kad_jaar = 'perc_kad_jaar' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='4')  SORTABLE,
+        s_bron_l = 's_bron_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_beheerder_l = 's_beheerder_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='30')  SORTABLE,
+        s_load_date_d = 's_load_date_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_insert_d = 's_insert_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        s_update_d = 's_update_d' :'java.sql.Date' (OPT) (sourcetyperadix='10', sourcetypename='DATE', sourcetypeid='91', sourcetypedecimals='0', sourcetypesize='13')  SORTABLE,
+        b_actief_l = 'b_actief_l' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='1')  SORTABLE,
+        s_load_id_l = 's_load_id_l' :'java.lang.Integer' (OPT) (sourcetyperadix='10', sourcetypename='INTEGER', sourcetypeid='4', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        perc_kad_refjaar = 'perc_kad_refjaar' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='4')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdws_d__la_vsgd_percelen_kadaster I18N us_pst (
+        perc_kad_rr_btw:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        perc_kad_gemeente:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        perc_kad_ligging1:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        perc_kad_ligging2:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '50', sourcetypeid = '12'), 
+        perc_kad_capakey:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        perc_kad_kadinfo:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        perc_kad_aard:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        perc_kad_opp:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        perc_kad_ki:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        perc_kad_eigcode:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '20', sourcetypeid = '12'), 
+        perc_kad_rechten:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        perc_kad_eignaam:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        perc_kad_eigpc:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        perc_kad_eiggem:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        perc_kad_eigstraat:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '100', sourcetypeid = '12'), 
+        perc_kad_eighsnr:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        perc_kad_catgebouw:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        perc_kad_nbrgevels:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        perc_kad_nbrverd:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        perc_kad_bewdakverd:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        perc_kad_bouwjaar:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        perc_kad_fyswyzjaar:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        perc_kad_constrkwal:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        perc_kad_nbrgarages:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        perc_kad_centrverw:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        perc_kad_nbrbadkmrs:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        perc_kad_nbrwoonglg:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        perc_kad_nbrwoonplt:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        perc_kad_bebopp:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        perc_kad_nutopp:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '5', sourcetypeid = '12'), 
+        perc_kad_jaar:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '4', sourcetypeid = '12'), 
+        s_bron_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_beheerder_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '30', sourcetypeid = '12'), 
+        s_load_date_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_insert_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        s_update_d:date (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '13', sourcetypeid = '91'), 
+        b_actief_l:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '1', sourcetypeid = '12'), 
+        s_load_id_l:int (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '4'), 
+        perc_kad_refjaar:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '4', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdws_d__la_vsgd_percelen_kadaster(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD perc_kad_rr_btw (any) OPT ANY
+             ADD perc_kad_gemeente (any) OPT ANY
+             ADD perc_kad_ligging1 (any) OPT ANY
+             ADD perc_kad_ligging2 (any) OPT ANY
+             ADD perc_kad_capakey (any) OPT ANY
+             ADD perc_kad_kadinfo (any) OPT ANY
+             ADD perc_kad_aard (any) OPT ANY
+             ADD perc_kad_opp (any) OPT ANY
+             ADD perc_kad_ki (any) OPT ANY
+             ADD perc_kad_eigcode (any) OPT ANY
+             ADD perc_kad_rechten (any) OPT ANY
+             ADD perc_kad_eignaam (any) OPT ANY
+             ADD perc_kad_eigpc (any) OPT ANY
+             ADD perc_kad_eiggem (any) OPT ANY
+             ADD perc_kad_eigstraat (any) OPT ANY
+             ADD perc_kad_eighsnr (any) OPT ANY
+             ADD perc_kad_catgebouw (any) OPT ANY
+             ADD perc_kad_nbrgevels (any) OPT ANY
+             ADD perc_kad_nbrverd (any) OPT ANY
+             ADD perc_kad_bewdakverd (any) OPT ANY
+             ADD perc_kad_bouwjaar (any) OPT ANY
+             ADD perc_kad_fyswyzjaar (any) OPT ANY
+             ADD perc_kad_constrkwal (any) OPT ANY
+             ADD perc_kad_nbrgarages (any) OPT ANY
+             ADD perc_kad_centrverw (any) OPT ANY
+             ADD perc_kad_nbrbadkmrs (any) OPT ANY
+             ADD perc_kad_nbrwoonglg (any) OPT ANY
+             ADD perc_kad_nbrwoonplt (any) OPT ANY
+             ADD perc_kad_bebopp (any) OPT ANY
+             ADD perc_kad_nutopp (any) OPT ANY
+             ADD perc_kad_jaar (any) OPT ANY
+             ADD s_bron_l (any) OPT ANY
+             ADD s_beheerder_l (any) OPT ANY
+             ADD s_load_date_d (any) OPT ANY
+             ADD s_insert_d (any) OPT ANY
+             ADD s_update_d (any) OPT ANY
+             ADD b_actief_l (any) OPT ANY
+             ADD s_load_id_l (any) OPT ANY
+             ADD perc_kad_refjaar (any) OPT ANY
+        )
+        OUTPUTLIST (b_actief_l, perc_kad_aard, perc_kad_bebopp, perc_kad_bewdakverd, perc_kad_bouwjaar, perc_kad_capakey, perc_kad_catgebouw, perc_kad_centrverw, perc_kad_constrkwal, perc_kad_eigcode, perc_kad_eiggem, perc_kad_eighsnr, perc_kad_eignaam, perc_kad_eigpc, perc_kad_eigstraat, perc_kad_fyswyzjaar, perc_kad_gemeente, perc_kad_jaar, perc_kad_kadinfo, perc_kad_ki, perc_kad_ligging1, perc_kad_ligging2, perc_kad_nbrbadkmrs, perc_kad_nbrgarages, perc_kad_nbrgevels, perc_kad_nbrverd, perc_kad_nbrwoonglg, perc_kad_nbrwoonplt, perc_kad_nutopp, perc_kad_opp, perc_kad_rechten, perc_kad_refjaar, perc_kad_rr_btw, s_beheerder_l, s_bron_l, s_insert_d, s_load_date_d, s_load_id_l, s_update_d
+        )
+        WRAPPER (jdbc bv_bzpdws_d__la_vsgd_percelen_kadaster)
+    );
+

@@ -1,0 +1,68 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_s3_txt_gevraagde_kbos
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_s3_txt_gevraagde_kbos.CATALOGNAME}'
+    RELATIONNAME='bv_s3_txt_gevraagde_kbos' 
+    OUTPUTSCHEMA (
+        type_adres = 'type_adres' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        ondernemingsnummer = 'ondernemingsnummer' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        maatschappelijke_naam = 'maatschappelijke_naam' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        landnaam = 'landnaam' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        postcode = 'postcode' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        gemeente = 'gemeente' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        straat = 'straat' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        huisnummer = 'huisnummer' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        busnummer = 'busnummer' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        niscode = 'niscode' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        straatcode = 'straatcode' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        landcode = 'landcode' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        rechtstoestand = 'rechtstoestand' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        status_ond = 'status_ond' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        versie = 'versie' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_s3_txt_gevraagde_kbos I18N us_pst (
+        type_adres:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        ondernemingsnummer:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        maatschappelijke_naam:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        landnaam:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        postcode:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        gemeente:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        straat:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        huisnummer:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        busnummer:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        niscode:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        straatcode:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        landcode:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        rechtstoestand:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        status_ond:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        versie:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_s3_txt_gevraagde_kbos(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD type_adres (any) OPT ANY
+             ADD ondernemingsnummer (any) OPT ANY
+             ADD maatschappelijke_naam (any) OPT ANY
+             ADD landnaam (any) OPT ANY
+             ADD postcode (any) OPT ANY
+             ADD gemeente (any) OPT ANY
+             ADD straat (any) OPT ANY
+             ADD huisnummer (any) OPT ANY
+             ADD busnummer (any) OPT ANY
+             ADD niscode (any) OPT ANY
+             ADD straatcode (any) OPT ANY
+             ADD landcode (any) OPT ANY
+             ADD rechtstoestand (any) OPT ANY
+             ADD status_ond (any) OPT ANY
+             ADD versie (any) OPT ANY
+        )
+        OUTPUTLIST (busnummer, gemeente, huisnummer, landcode, landnaam, maatschappelijke_naam, niscode, ondernemingsnummer, postcode, rechtstoestand, status_ond, straat, straatcode, type_adres, versie
+        )
+        WRAPPER (jdbc bv_s3_txt_gevraagde_kbos)
+    );
+

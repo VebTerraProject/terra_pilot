@@ -1,0 +1,29 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_bzpdwr_d__dw_d_vsgd_rbh_bestemmingstype
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_bzpdwr_d__dw_d_vsgd_rbh_bestemmingstype.CATALOGNAME}'
+    RELATIONNAME='bv_bzpdwr_d__dw_d_vsgd_rbh_bestemmingstype' 
+    OUTPUTSCHEMA (
+        c_rbh_code_pk = 'c_rbh_code_pk' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='3')  NOT NULL SORTABLE,
+        c_rbh_bestemmingstype = 'c_rbh_bestemmingstype' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  NOT NULL SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_bzpdwr_d__dw_d_vsgd_rbh_bestemmingstype I18N us_pst (
+        c_rbh_code_pk:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '3', sourcetypeid = '12'), 
+        c_rbh_bestemmingstype:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_bzpdwr_d__dw_d_vsgd_rbh_bestemmingstype(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD c_rbh_code_pk (any) OPT ANY
+             ADD c_rbh_bestemmingstype (any) OPT ANY
+        )
+        OUTPUTLIST (c_rbh_bestemmingstype, c_rbh_code_pk
+        )
+        WRAPPER (jdbc bv_bzpdwr_d__dw_d_vsgd_rbh_bestemmingstype)
+    );
+

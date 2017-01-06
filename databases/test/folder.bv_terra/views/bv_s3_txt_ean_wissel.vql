@@ -1,0 +1,47 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC bv_s3_txt_ean_wissel
+    FOLDER = '/bv_terra'
+    DATASOURCENAME=test_conn
+    CATALOGNAME = '${databases.test.folder.bv_terra.views.jdbc.bv_s3_txt_ean_wissel.CATALOGNAME}'
+    RELATIONNAME='bv_s3_txt_ean_wissel' 
+    OUTPUTSCHEMA (
+        ean = 'ean' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        kboverbruiker_0 = 'kboverbruiker_0' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        glnlevernacier_0 = 'glnlevernacier_0' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        actiefvanverbruiker_0 = 'actiefvanverbruiker_0' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        actieftotverbruiker_0 = 'actieftotverbruiker_0' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        actiefvanleverancier_0 = 'actiefvanleverancier_0' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        actieftotleverancier_0 = 'actieftotleverancier_0' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE,
+        cleankbo_0 = 'cleankbo_0' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='VARCHAR', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='65536')  SORTABLE
+    );
+
+CREATE OR REPLACE TABLE bv_s3_txt_ean_wissel I18N us_pst (
+        ean:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        kboverbruiker_0:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        glnlevernacier_0:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        actiefvanverbruiker_0:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        actieftotverbruiker_0:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        actiefvanleverancier_0:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        actieftotleverancier_0:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12'), 
+        cleankbo_0:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '65536', sourcetypeid = '12')
+    )
+    FOLDER = '/bv_terra'
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD bv_s3_txt_ean_wissel(
+        I18N us_pst
+        CONSTRAINTS (
+             ADD ean (any) OPT ANY
+             ADD kboverbruiker_0 (any) OPT ANY
+             ADD glnlevernacier_0 (any) OPT ANY
+             ADD actiefvanverbruiker_0 (any) OPT ANY
+             ADD actieftotverbruiker_0 (any) OPT ANY
+             ADD actiefvanleverancier_0 (any) OPT ANY
+             ADD actieftotleverancier_0 (any) OPT ANY
+             ADD cleankbo_0 (any) OPT ANY
+        )
+        OUTPUTLIST (actieftotleverancier_0, actieftotverbruiker_0, actiefvanleverancier_0, actiefvanverbruiker_0, cleankbo_0, ean, glnlevernacier_0, kboverbruiker_0
+        )
+        WRAPPER (jdbc bv_s3_txt_ean_wissel)
+    );
+

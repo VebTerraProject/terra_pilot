@@ -1,0 +1,5 @@
+﻿CREATE OR REPLACE VIEW dv_01_consumption_qualities_hist FOLDER = '/3 - derived views' AS SELECT bv_consumption_qualities.id AS id, bv_consumption_qualities.code AS code, bv_consumption_qualities.test AS description, bv_consumption_qualities.created_by AS created_by, bv_consumption_qualities.last_updated_by AS last_updated_by, bv_consumption_qualities.created AS created, bv_consumption_qualities.last_updated AS last_updated FROM bv_consumption_qualities WHERE id = 1;
+
+ALTER VIEW dv_01_consumption_qualities_hist
+ LAYOUT (bv_consumption_qualities = [20, 20, 207, 166]);
+

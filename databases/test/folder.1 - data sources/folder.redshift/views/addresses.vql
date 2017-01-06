@@ -1,0 +1,56 @@
+﻿# REQUIRES-PROPERTIES-FILE - # Do not remove this comment!
+CREATE OR REPLACE WRAPPER JDBC addresses
+    FOLDER = '/1 - data sources/redshift'
+    DATASOURCENAME=ds_ar_terdwh
+    CATALOGNAME = '${databases.test.folder.1 - data sources.folder.redshift.views.jdbc.addresses.CATALOGNAME}'
+    SCHEMANAME = '${databases.test.folder.1 - data sources.folder.redshift.views.jdbc.addresses.SCHEMANAME}'
+    RELATIONNAME='addresses' 
+    OUTPUTSCHEMA (
+        id = 'id' :'java.lang.Long' (OPT) (sourcetyperadix='10', sourcetypename='int8', sourcetypeid='-5', sourcetypedecimals='0', sourcetypesize='19')  NOT NULL SORTABLE,
+        street = 'street' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        house_number = 'house_number' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='25')  SORTABLE,
+        bus_number = 'bus_number' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='25')  SORTABLE,
+        postal_code = 'postal_code' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='10')  SORTABLE,
+        city = 'city' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='255')  SORTABLE,
+        created_by = 'created_by' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        last_updated_by = 'last_updated_by' :'java.lang.String' (OPT) (sourcetyperadix='10', sourcetypename='varchar', sourcetypeid='12', sourcetypedecimals='0', sourcetypesize='256')  SORTABLE,
+        created = 'created' :'java.sql.Timestamp' (OPT) (sourcetyperadix='10', sourcetypename='timestamp', sourcetypeid='93', sourcetypedecimals='6', sourcetypesize='29')  SORTABLE,
+        last_updated = 'last_updated' :'java.sql.Timestamp' (OPT) (sourcetyperadix='10', sourcetypename='timestamp', sourcetypeid='93', sourcetypedecimals='6', sourcetypesize='29')  SORTABLE
+    )
+    CONSTRAINT 'addresses_$mig_pkey' PRIMARY KEY ( 'id' );
+
+CREATE OR REPLACE TABLE addresses I18N be_gmt (
+        id:long (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '19', sourcetypeid = '4'), 
+        street:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        house_number:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '25', sourcetypeid = '12'), 
+        bus_number:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '25', sourcetypeid = '12'), 
+        postal_code:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '10', sourcetypeid = '12'), 
+        city:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '255', sourcetypeid = '12'), 
+        created_by:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        last_updated_by:text (sourcetyperadix = '10', sourcetypedecimals = '0', sourcetypesize = '256', sourcetypeid = '12'), 
+        created:date (sourcetyperadix = '10', sourcetypedecimals = '6', sourcetypesize = '29', sourcetypeid = '93'), 
+        last_updated:date (sourcetyperadix = '10', sourcetypedecimals = '6', sourcetypesize = '29', sourcetypeid = '93')
+    )
+    FOLDER = '/1 - data sources/redshift'
+    CONSTRAINT 'addresses_$mig_pkey' PRIMARY KEY ( 'id' )
+    CACHE OFF
+    TIMETOLIVEINCACHE DEFAULT
+    ADD SEARCHMETHOD addresses(
+        I18N be_gmt
+        CONSTRAINTS (
+             ADD id (any) OPT ANY
+             ADD street (any) OPT ANY
+             ADD house_number (any) OPT ANY
+             ADD bus_number (any) OPT ANY
+             ADD postal_code (any) OPT ANY
+             ADD city (any) OPT ANY
+             ADD created_by (any) OPT ANY
+             ADD last_updated_by (any) OPT ANY
+             ADD created (any) OPT ANY
+             ADD last_updated (any) OPT ANY
+        )
+        OUTPUTLIST (bus_number, city, created, created_by, house_number, id, last_updated, last_updated_by, postal_code, street
+        )
+        WRAPPER (jdbc addresses)
+    );
+
